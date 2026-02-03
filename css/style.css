@@ -203,8 +203,8 @@ body {
 }
 
 .btn-success:hover {
-    background-color: #155a2b;
-    border-color: #155a2b;
+    background-color: #EBBF80;
+    border-color: #EBBF80;
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(28, 98, 53, 0.3);
 }
