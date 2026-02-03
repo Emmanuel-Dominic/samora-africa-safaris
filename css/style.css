@@ -1,0 +1,600 @@
+/* ============================
+   CUSTOM STYLES FOR SAMORA AFRICA SAFARIS
+   ============================ */
+
+:root {
+    --primary-color: #B8860B;
+    --secondary-color: #EBBF80;
+    --accent-color: #B8860B;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f9fa;
+    --text-muted: #6c757d;
+    --earth-brown: #EBBF80;
+    --safari-green: #B8860B;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Container Fixes */
+.container-fluid {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    background: #FFFFFF !important;
+    border-bottom: 2px solid #EBBF80;
+    padding: 8px 20px;
+}
+
+.navbar .container-fluid {
+    padding-left: 15px;
+}
+
+.navbar .nav-link {
+    color: #B8860B !important;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #EBBF80 !important;
+}
+
+.navbar .nav-link.active {
+    color: #EBBF80 !important;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #B8860B;
+}
+
+.navbar-toggler {
+    border-color: #B8860B;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231C6235' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-brand {
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+/* Footer Logo */
+.footer-logo {
+    height: 80px;
+    width: auto;
+}
+
+/* Hero Carousel */
+.carousel {
+    width: 100%;
+}
+
+.carousel-caption {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-item {
+    position: relative;
+    min-height: 600px;
+}
+
+/* Top Bar */
+.top-bar {
+    background: var(--primary-color);
+}
+
+.top-bar a {
+    transition: opacity 0.3s ease;
+}
+
+.top-bar a:hover {
+    opacity: 0.8;
+}
+
+.top-bar .social-icons a {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.top-bar .social-icons a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Equal height card images */
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Safari package cards - ensure equal heights */
+#top-safaris .card {
+    height: 100%;
+}
+
+#top-safaris .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#top-safaris .card-body .btn {
+    margin-top: auto;
+}
+
+/* Place cards equal height images */
+.place-card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Team section - equal height cards and images */
+#team .card {
+    height: 100%;
+}
+
+#team .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+#team .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Buttons */
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #155a2b;
+    border-color: #155a2b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(28, 98, 53, 0.3);
+}
+
+.btn-outline-success {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Brand Accent Button */
+.btn-brand {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-brand:hover {
+    background-color: #d4a860;
+    border-color: #d4a860;
+    transform: scale(1.05);
+}
+
+/* Section Styling */
+section {
+    padding: 60px 0;
+    width: 100%;
+}
+
+section h2 {
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+}
+
+/* Footer Branding */
+footer h5 {
+    color: #fff;
+}
+
+footer .text-warning {
+    color: var(--secondary-color) !important;
+}
+
+/* Place Cards */
+.place-card {
+    transition: all 0.3s ease;
+}
+
+.place-card:hover img {
+    transform: scale(1.05);
+}
+
+.place-card img {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+/* Safari Packages */
+.safari-package {
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.safari-package:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Accordion */
+.accordion-button:not(.collapsed) {
+    background-color: #e8f5e9;
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+/* Alert Boxes */
+.alert-success {
+    background-color: #e8f5e9;
+    border-color: var(--primary-color);
+    color: #1b5e20;
+}
+
+.alert-info {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+    color: #0d47a1;
+}
+
+.alert-warning {
+    background-color: #fff3e0;
+    border-color: #ff9800;
+    color: #e65100;
+}
+
+/* Form Elements */
+.form-control {
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero Section */
+.bg-success {
+    background-color: var(--primary-color) !important;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Text Utilities */
+.text-success {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-height: 400px;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Special Effects */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    border-top: 4px solid var(--secondary-color);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color) !important;
+}
+
+footer .social-link:hover {
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+/* Badge Style */
+.badge-success {
+    background-color: var(--primary-color) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #155a2b;
+}
+
+/* Activity Cards */
+.activity-card {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+.activity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover img {
+    transform: scale(1.1);
+}
+
+.activity-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    padding: 2rem 1.5rem;
+    color: white;
+    transform: translateY(30px);
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover .activity-overlay {
+    transform: translateY(0);
+}
+
+.activity-overlay h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.activity-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #e8f5e9;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.icon-box i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Modal Styling */
+.modal-header {
+    background-color: var(--primary-color) !important;
+    border-bottom: none;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* Table Styling */
+.table {
+    border-collapse: collapse;
+}
+
+.table thead th {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Loading Animation */
+.spinner-border-sm {
+    border-width: 0.3em;
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+
+/* Partners Section */
+#partners {
+    background: #f8f9fa;
+}
+
+.partners-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 15px auto;
+}
+
+.partner-box {
+    min-height: 100px;
+}
+
+.partner-logo {
+    font-size: 0.9rem;
+}
+
+/* Box Shadows */
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Border Radius Variations */
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+/* Transition Utilities */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Active State */
+.active {
+    color: var(--primary-color) !important;
+}
+
+/* Success Color Variations */
+.bg-success-light {
+    background-color: #e8f5e9;
+}
+
+.text-success-dark {
+    color: #1b5e20;
+}
