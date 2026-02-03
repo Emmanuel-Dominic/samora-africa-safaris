@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safaris - Samora Africa Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="mailto:info@samoraafrica.com" class="text-white text-decoration-none small">
+                            <i class="fas fa-envelope me-2"></i>info@samoraafrica.com
+                        </a>
+                        <a href="tel:+256772859324" class="text-white text-decoration-none small">
+                            <i class="fas fa-phone me-2"></i>+256 772 859 324
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <div class="d-flex align-items-center justify-content-end gap-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/256772859324" target="_blank" rel="noopener" class="text-white" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo/samora-africa-logo.png" alt="Samora Africa Safaris" style="height: 45px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="safarisDropdown" role="button" data-bs-toggle="dropdown">
+                            Safaris
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="safarisDropdown">
+                            <li><a class="dropdown-item" href="safaris.html?country=uganda">Uganda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=rwanda">Rwanda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=combined">Combined</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="placesDropdown" role="button" data-bs-toggle="dropdown">
+                            Places to Visit
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><h6 class="dropdown-header">Uganda (11 Places)</h6></li>
+                            <li><a class="dropdown-item" href="places.html#uganda">Explore Uganda</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Rwanda (5 Places)</h6></li>
+                            <li><a class="dropdown-item" href="places.html#rwanda">Explore Rwanda</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html#company">Company</a></li>
+                            <li><a class="dropdown-item" href="about.html#team">Our Team</a></li>
+                            <li><a class="dropdown-item" href="about.html#why">Why Choose Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-success text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Safari Packages</h1>
+            <p class="fs-5">Choose your perfect adventure</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3">Filter</h5>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Destination</label>
+                            <select class="form-select" id="countryFilter">
+                                <option value="all">All Countries</option>
+                                <option value="uganda">Uganda</option>
+                                <option value="rwanda">Rwanda</option>
+                                <option value="combined">Combined</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Price Range</label>
+                            <select class="form-select">
+                                <option>Any Price</option>
+                                <option>$500 - $1000</option>
+                                <option>$1000 - $2000</option>
+                                <option>$2000+</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Duration</label>
+                            <select class="form-select">
+                                <option>Any Duration</option>
+                                <option>3-5 Days</option>
+                                <option>6-10 Days</option>
+                                <option>10+ Days</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safari Listings -->
+            <div class="col-lg-9">
+                <!-- Safari 1 -->
+                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="uganda">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/photos/Elephant ishasha.jpg" class="img-fluid rounded-start h-100" alt="Uganda Wildlife Safari" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Uganda Wildlife Safari - 7 Days</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Uganda</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                
+                                <div class="mb-3">
+                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
+                                    <ul class="small text-muted">
+                                        <li>Day 1-2: Kampala & Entebbe</li>
+                                        <li>Day 3-5: Bwindi Impenetrable Forest</li>
+                                        <li>Day 6-7: Lake Bunyonyi & Return</li>
+                                    </ul>
+                                </div>
+
+                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">$1,200/person</span></p>
+                                <p class="mb-3"><strong>Group Size:</strong> 2-12 people</p>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Uganda Wildlife Safari - 7 Days">View Full Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 2 -->
+                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="uganda">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/photos/Hippos in water.jpg" class="img-fluid rounded-start h-100" alt="Queen Elizabeth Park" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Queen Elizabeth Park Adventure - 5 Days</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Uganda</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                
+                                <div class="mb-3">
+                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
+                                    <ul class="small text-muted">
+                                        <li>Day 1-2: Game Drive & Crater Lakes</li>
+                                        <li>Day 3-4: Boat Cruise & Wildlife</li>
+                                        <li>Day 5: Return to Kampala</li>
+                                    </ul>
+                                </div>
+
+                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">$950/person</span></p>
+                                <p class="mb-3"><strong>Group Size:</strong> 2-15 people</p>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Queen Elizabeth Park Adventure - 5 Days">View Full Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 3 -->
+                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="rwanda">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/photos/Gorilla.jpg" class="img-fluid rounded-start h-100" alt="Rwanda Gorilla Trekking" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Rwanda Gorilla Trekking - 6 Days</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Rwanda</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                
+                                <div class="mb-3">
+                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
+                                    <ul class="small text-muted">
+                                        <li>Day 1-2: Kigali & Volcanoes NP</li>
+                                        <li>Day 3-4: Gorilla Trekking</li>
+                                        <li>Day 5-6: Lake Kivu & Return</li>
+                                    </ul>
+                                </div>
+
+                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">$1,500/person</span></p>
+                                <p class="mb-3"><strong>Group Size:</strong> 2-8 people</p>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Rwanda Gorilla Trekking - 6 Days">View Full Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari 4 -->
+                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="combined">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/photos/GIRAFFES MBURO.jpg" class="img-fluid rounded-start h-100" alt="Combined Safari" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Ultimate East Africa Explorer - 12 Days</h5>
+                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Uganda & Rwanda</p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                
+                                <div class="mb-3">
+                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
+                                    <ul class="small text-muted">
+                                        <li>Day 1-3: Uganda Wildlife</li>
+                                        <li>Day 4-8: Bwindi & Gorillas</li>
+                                        <li>Day 9-12: Rwanda & Return</li>
+                                    </ul>
+                                </div>
+
+                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">$2,200/person</span></p>
+                                <p class="mb-3"><strong>Group Size:</strong> 2-10 people</p>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Ultimate East Africa Explorer - 12 Days">View Full Itinerary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Safari Details Modal -->
+    <div class="modal fade" id="safariModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="modalTitle">Safari Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="fw-bold mb-3">Day by Day Breakdown:</h6>
+                    <div id="itineraryContent"></div>
+
+                    <hr class="my-4">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-2">Inclusions:</h6>
+                            <ul class="small">
+                                <li>Accommodation (3-4 star hotels)</li>
+                                <li>Meals (Breakfast, Lunch, Dinner)</li>
+                                <li>Park entrance fees</li>
+                                <li>Professional guide</li>
+                                <li>Vehicle transportation</li>
+                                <li>Domestic flights</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-2">Exclusions:</h6>
+                            <ul class="small">
+                                <li>International flights</li>
+                                <li>Travel insurance</li>
+                                <li>Personal expenses</li>
+                                <li>Tips for guides</li>
+                                <li>Visa fees</li>
+                                <li>Optional activities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="contact.html" class="btn btn-success">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-light py-5" style="background: #B8860B;">
+        <div class="container">
+            <div class="row mb-5">
+                <!-- Column 1: Brand & Description -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="mb-3">
+                        <img src="images/logo/logo-stacked-white.png" alt="Samora Africa Safaris" style="height: 80px;">
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.8);">
+                        Affordable, accessible, and reliable safari adventures for unforgettable African experiences in Uganda and Rwanda.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="safaris.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Safaris</a></li>
+                        <li class="mb-2"><a href="places.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Attractions</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Our Team</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Booking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3 text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">About Samora</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">FAQ</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3 text-white">Contact Info</h5>
+                    <div class="mb-3">
+                        <a href="tel:+256701234567" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-phone me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">+256 777 037 945</span>
+                        </a>
+                    </div>
+                    <div class="mb-3">
+                        <a href="mailto:info@samoraafrica.com" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-envelope me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">info@samoraafrica.com</span>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-map-marker-alt me-2" style="color: #EBBF80; margin-top: 2px;"></i>
+                        <span style="color: rgba(255,255,255,0.8);">Plot 123, Safari Avenue<br>Kampala, Uganda</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid rgba(235, 191, 128, 0.3); padding-top: 30px;">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2026 Samora Africa Safaris. All rights reserved. Adventure Beyond Expectations.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="social-link text-decoration-none" style="color: #EBBF80;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Safari Modal Population
+        const safariModal = document.getElementById('safariModal');
+        safariModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const title = button.getAttribute('data-title');
+            document.getElementById('modalTitle').textContent = title;
+            
+            // Populate itinerary
+            const itineraryHTML = `
+                <div class="accordion" id="itineraryAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#day1">
+                                Day 1: Arrival
+                            </button>
+                        </h2>
+                        <div id="day1" class="accordion-collapse collapse show" data-bs-parent="#itineraryAccordion">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#day2">
+                                Day 2: Game Viewing
+                            </button>
+                        </h2>
+                        <div id="day2" class="accordion-collapse collapse" data-bs-parent="#itineraryAccordion">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#day3">
+                                Day 3: Adventure Activities
+                            </button>
+                        </h2>
+                        <div id="day3" class="accordion-collapse collapse" data-bs-parent="#itineraryAccordion">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('itineraryContent').innerHTML = itineraryHTML;
+        });
+
+        // Filter functionality
+        function filterSafaris(country) {
+            document.querySelectorAll('.safari-package').forEach(pkg => {
+                if (country === 'all' || pkg.getAttribute('data-country') === country) {
+                    pkg.style.display = 'block';
+                } else {
+                    pkg.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('countryFilter').addEventListener('change', function() {
+            filterSafaris(this.value);
+        });
+
+        // Apply filter from URL parameter on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const country = urlParams.get('country');
+            if (country && ['uganda', 'rwanda', 'combined'].includes(country)) {
+                document.getElementById('countryFilter').value = country;
+                filterSafaris(country);
+            }
+        });
+    </script>
+</body>
+</html>

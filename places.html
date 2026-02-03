@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places to Visit - Samora Africa Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="mailto:info@samoraafrica.com" class="text-white text-decoration-none small">
+                            <i class="fas fa-envelope me-2"></i>info@samoraafrica.com
+                        </a>
+                        <a href="tel:+256772859324" class="text-white text-decoration-none small">
+                            <i class="fas fa-phone me-2"></i>+256 772 859 324
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <div class="d-flex align-items-center justify-content-end gap-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/256772859324" target="_blank" rel="noopener" class="text-white" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo/samora-africa-logo.png" alt="Samora Africa Safaris" style="height: 45px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="safarisDropdown" role="button" data-bs-toggle="dropdown">
+                            Safaris
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="safarisDropdown">
+                            <li><a class="dropdown-item" href="safaris.html?country=uganda">Uganda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=rwanda">Rwanda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=combined">Combined</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="placesDropdown" role="button" data-bs-toggle="dropdown">
+                            Places to Visit
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><h6 class="dropdown-header">Uganda (11 Places)</h6></li>
+                            <li><a class="dropdown-item" href="places.html#uganda">Explore Uganda</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Rwanda (5 Places)</h6></li>
+                            <li><a class="dropdown-item" href="places.html#rwanda">Explore Rwanda</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html#company">Company</a></li>
+                            <li><a class="dropdown-item" href="about.html#team">Our Team</a></li>
+                            <li><a class="dropdown-item" href="about.html#why">Why Choose Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <div class="bg-success text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Places to Visit</h1>
+            <p class="fs-5">Discover amazing destinations</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Uganda Section -->
+        <section id="uganda" class="mb-5">
+            <h2 class="h1 fw-bold mb-4 pb-3 border-bottom border-success">Uganda (11 Places)</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/Bwindi Forest.jpg" class="card-img-top" alt="Bwindi Impenetrable Forest">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Bwindi Impenetrable Forest</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Bwindi Impenetrable Forest">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/Hippos in water.jpg" class="card-img-top" alt="Queen Elizabeth National Park">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Queen Elizabeth NP</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Queen Elizabeth National Park">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-50.jpg" class="card-img-top" alt="Rwenzori Mountains">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Rwenzori Mountains</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Rwenzori Mountains">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-51.jpg" class="card-img-top" alt="Lake Bunyonyi">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Lake Bunyonyi</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Lake Bunyonyi">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/Grazing Zebras in Lake Mburo NP.jpg" class="card-img-top" alt="Kidepo Valley National Park">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Kidepo Valley NP</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Kidepo Valley National Park">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/Eagle.jpg" class="card-img-top" alt="Murchison Falls">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Murchison Falls NP</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Murchison Falls">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/Ankole cows .jpg" class="card-img-top" alt="Fort Portal">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Fort Portal</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Fort Portal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-52.jpg" class="card-img-top" alt="Sipi Falls">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Sipi Falls</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Sipi Falls">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-53.jpg" class="card-img-top" alt="Jinja & Source of Nile">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Jinja & Source of Nile</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Jinja & Source of Nile">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-54.jpg" class="card-img-top" alt="Lake Victoria">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Lake Victoria</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Lake Victoria">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-55.jpg" class="card-img-top" alt="Kampala City">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Kampala City</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Kampala City">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <!-- Rwanda Section -->
+        <section id="rwanda" class="mb-5">
+            <h2 class="h1 fw-bold mb-4 pb-3 border-bottom border-success">Rwanda (5 Places)</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/Gorilla.jpg" class="card-img-top" alt="Volcanoes National Park">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Volcanoes National Park</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Volcanoes National Park">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-56.jpg" class="card-img-top" alt="Lake Kivu">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Lake Kivu</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Lake Kivu">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-57.jpg" class="card-img-top" alt="Kigali Genocide Memorial">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Kigali Genocide Memorial</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Kigali Genocide Memorial">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/BuzBi-58.jpg" class="card-img-top" alt="Nyungwe Forest National Park">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Nyungwe Forest NP</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Nyungwe Forest National Park">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 place-card">
+                        <img src="images/photos/GIRAFFES MBURO.jpg" class="card-img-top" alt="Akagera National Park">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Akagera National Park</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#placeModal" data-place="Akagera National Park">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Place Details Modal -->
+    <div class="modal fade" id="placeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="placeModalTitle">Place Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/photos/Elephant.jpg" class="img-fluid rounded mb-3" alt="">
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <h6 class="fw-bold mt-3">Best Time to Visit:</h6>
+                    <p class="text-muted">June to September, December to February</p>
+                    <h6 class="fw-bold">Activities:</h6>
+                    <ul class="text-muted">
+                        <li>Game viewing</li>
+                        <li>Hiking</li>
+                        <li>Photography</li>
+                        <li>Cultural tours</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="safaris.html" class="btn btn-success">Include in Safari</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-light py-5" style="background: #B8860B;">
+        <div class="container">
+            <div class="row mb-5">
+                <!-- Column 1: Brand & Description -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="mb-3">
+                        <img src="images/logo/logo-stacked-white.png" alt="Samora Africa Safaris" style="height: 80px;">
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.8);">
+                        Affordable, accessible, and reliable safari adventures for unforgettable African experiences in Uganda and Rwanda.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="safaris.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Safaris</a></li>
+                        <li class="mb-2"><a href="places.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Attractions</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Our Team</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Booking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3 text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">About Samora</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">FAQ</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3 text-white">Contact Info</h5>
+                    <div class="mb-3">
+                        <a href="tel:+256701234567" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-phone me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">+256 777 037 945</span>
+                        </a>
+                    </div>
+                    <div class="mb-3">
+                        <a href="mailto:info@samoraafrica.com" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-envelope me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">info@samoraafrica.com</span>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-map-marker-alt me-2" style="color: #EBBF80; margin-top: 2px;"></i>
+                        <span style="color: rgba(255,255,255,0.8);">Plot 123, Safari Avenue<br>Kampala, Uganda</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid rgba(235, 191, 128, 0.3); padding-top: 30px;">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2026 Samora Africa Safaris. All rights reserved. Adventure Beyond Expectations.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="social-link text-decoration-none" style="color: #EBBF80;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const placeModal = document.getElementById('placeModal');
+        placeModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const place = button.getAttribute('data-place');
+            document.getElementById('placeModalTitle').textContent = place;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samora Africa Safaris - Explore Uganda & Rwanda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="mailto:info@samoraafrica.com" class="text-white text-decoration-none small">
+                            <i class="fas fa-envelope me-2"></i>info@samoraafrica.com
+                        </a>
+                        <a href="tel:+256700593200" class="text-white text-decoration-none small">
+                            <i class="fas fa-phone me-2"></i>+256 772 859324
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <div class="d-flex align-items-center justify-content-end gap-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/256700593200" target="_blank" rel="noopener" class="text-white" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo/samora-africa-logo.png" alt="Samora Africa Safaris" style="height: 45px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="safarisDropdown" role="button" data-bs-toggle="dropdown">
+                            Safaris
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="safarisDropdown">
+                            <li><a class="dropdown-item" href="safaris.html?country=uganda">Uganda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=rwanda">Rwanda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=combined">Combined</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="placesDropdown" role="button" data-bs-toggle="dropdown">
+                            Places to Visit
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><h6 class="dropdown-header">Uganda (11 Places)</h6></li>
+                            <li><a class="dropdown-item" href="places.html#uganda">Explore Uganda</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Rwanda (5 Places)</h6></li>
+                            <li><a class="dropdown-item" href="places.html#rwanda">Explore Rwanda</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html#company">Company</a></li>
+                            <li><a class="dropdown-item" href="about.html#team">Our Team</a></li>
+                            <li><a class="dropdown-item" href="about.html#why">Why Choose Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/photos/Gorilla.jpg') center/cover; height: 600px;">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                    <h1 class="display-3 fw-bold text-white mb-4">Experience Africa Like Never Before</h1>
+                    <p class="fs-5 text-light mb-4">Discover the wild beauty of Uganda and Rwanda</p>
+                    <a href="safaris.html" class="btn btn-success btn-lg">Explore Safaris</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/photos/Elephant.jpg') center/cover; height: 600px;">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                    <h1 class="display-3 fw-bold text-white mb-4">Unforgettable Adventures Await</h1>
+                    <p class="fs-5 text-light mb-4">Experience pristine wildlife and breathtaking landscapes</p>
+                    <a href="places.html" class="btn btn-success btn-lg">Discover Places</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/photos/Bwindi Forest.jpg') center/cover; height: 600px;">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                    <h1 class="display-3 fw-bold text-white mb-4">Create Lasting Memories</h1>
+                    <p class="fs-5 text-light mb-4">Join thousands of satisfied travelers exploring Africa</p>
+                    <a href="contact.html" class="btn btn-success btn-lg">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Banner Section -->
+    <section style="background: linear-gradient(135deg, #B8860B 0%, #B8860B 100%); padding: 30px; color: white; width: 100%; margin: 0; box-sizing: border-box;">
+        <div class="container text-center">
+            <h3 class="mb-0" style="font-size: 1.8rem; font-weight: 300; letter-spacing: 2px;">
+                <span style="color: #EBBF80; font-weight: 600;">ADVENTURE</span> BEYOND EXPECTATIONS
+            </h3>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="images/photos/GIRAFFES MBURO.jpg" alt="Safari Adventure" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="h1 fw-bold mb-3" style="color: #B8860B;">About Samora Africa Safaris</h2>
+                    <p class="fs-5 text-muted mb-3">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque penatibus et magnis dis parturient montes.
+                    </p>
+                    <p class="fs-5 text-muted mb-3">
+                        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget.
+                    </p>
+                    <a href="about.html" class="btn btn-success">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Uganda Section (6 Items) -->
+    <section class="py-5 bg-light" id="why-uganda">
+        <div class="container">
+            <h2 class="h1 fw-bold text-center mb-5" style="color: #B8860B;">Why Choose Uganda?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body p-4">
+                            <i class="fas fa-mountain text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title fw-bold">Pristine Landscapes</h5>
+                            <p class="card-text text-muted">Discover breathtaking mountain peaks, lush valleys, and untouched natural beauty across the Albertine rift.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body p-4">
+                            <i class="fas fa-paw text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title fw-bold">Wildlife Diversity</h5>
+                            <p class="card-text text-muted">Home to over 1,000 bird species, mountain gorillas, lions, and countless other iconic African wildlife species.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body p-4">
+                            <i class="fas fa-users text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title fw-bold">Expert Guides</h5>
+                            <p class="card-text text-muted">Our experienced naturalists provide personalized guidance with deep knowledge of local ecosystems and wildlife behavior.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body p-4">
+                            <i class="fas fa-heart text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title fw-bold">Authentic Experiences</h5>
+                            <p class="card-text text-muted">Connect with local communities, participate in cultural exchanges, and experience genuine African hospitality firsthand.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body p-4">
+                            <i class="fas fa-dollar-sign text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title fw-bold">Competitive Pricing</h5>
+                            <p class="card-text text-muted">Exceptional value for money with flexible packages designed to suit all budgets and travel preferences.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 text-center">
+                        <div class="card-body p-4">
+                            <i class="fas fa-shield-alt text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5 class="card-title fw-bold">Safety & Comfort</h5>
+                            <p class="card-text text-muted">Thoroughly vetted accommodations, well-maintained vehicles, and comprehensive travel insurance for your peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Safaris Section -->
+    <section class="py-5 bg-light" id="top-safaris">
+        <div class="container">
+            <h2 class="h1 fw-bold text-center mb-5 text-success">Top Safari Packages</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="images/photos/Elephant ishasha.jpg" class="card-img-top" alt="Uganda Safari">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Uganda Wildlife Safari</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            <p class="fs-5 fw-bold text-success mb-3">From $1,200/person</p>
+                            <a href="safaris.html" class="btn btn-outline-success">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="images/photos/Gorilla.jpg" class="card-img-top" alt="Rwanda Safari">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Rwanda Gorilla Trekking</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            <p class="fs-5 fw-bold text-success mb-3">From $1,500/person</p>
+                            <a href="safaris.html" class="btn btn-outline-success">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <img src="images/photos/Buffalo.jpg" class="card-img-top" alt="Combined Safari">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Combined 2-Country</h5>
+                            <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            <p class="fs-5 fw-bold text-success mb-3">From $2,000/person</p>
+                            <a href="safaris.html" class="btn btn-outline-success">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="safaris.html" class="btn btn-success btn-lg">View All Safaris</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section class="py-5" id="places-preview">
+        <div class="container">
+            <h2 class="h1 fw-bold text-center mb-5" style="color: #B8860B;">Featured Places to Visit</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="place-card">
+                        <img src="images/photos/Bwindi Forest.jpg" alt="Bwindi Impenetrable Forest" class="img-fluid rounded mb-3">
+                        <h5 class="fw-bold">Bwindi Impenetrable Forest</h5>
+                        <p class="text-muted small">Uganda</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="place-card">
+                        <img src="images/photos/Hippos in water.jpg" alt="Queen Elizabeth Park" class="img-fluid rounded mb-3">
+                        <h5 class="fw-bold">Queen Elizabeth Park</h5>
+                        <p class="text-muted small">Uganda</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="place-card">
+                        <img src="images/photos/Gorilla.jpg" alt="Volcanoes National Park" class="img-fluid rounded mb-3">
+                        <h5 class="fw-bold">Volcanoes National Park</h5>
+                        <p class="text-muted small">Rwanda</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="places.html" class="btn btn-success btn-lg">Explore All Places</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-5" id="partners">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="h1 fw-bold text-success">Our Partners</h2>
+                <div class="partners-divider"></div>
+                <p class="text-muted">Trusted partnerships for exceptional safari experiences</p>
+            </div>
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="bg-white rounded shadow-sm p-4 h-100 d-flex align-items-center justify-content-center partner-box">
+                        <span class="text-muted fw-bold partner-logo">UWA</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="bg-white rounded shadow-sm p-4 h-100 d-flex align-items-center justify-content-center partner-box">
+                        <span class="text-muted fw-bold partner-logo">RDB</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="bg-white rounded shadow-sm p-4 h-100 d-flex align-items-center justify-content-center partner-box">
+                        <span class="text-muted fw-bold partner-logo">UTB</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="bg-white rounded shadow-sm p-4 h-100 d-flex align-items-center justify-content-center partner-box">
+                        <span class="text-muted fw-bold partner-logo">AUTO</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="bg-white rounded shadow-sm p-4 h-100 d-flex align-items-center justify-content-center partner-box">
+                        <span class="text-muted fw-bold partner-logo">UHOA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section with Images -->
+    <section class="py-5" id="activities">
+        <div class="container">
+            <h2 class="h1 fw-bold text-center mb-5 text-success">Popular Activities</h2>
+            <p class="text-center text-muted mb-5 fs-5">Experience unforgettable adventures with our carefully curated activities</p>
+            
+            <!-- Activity Images Grid -->
+            <div class="row mb-5">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="activity-card">
+                        <img src="images/photos/BuzBi-60.jpg" alt="Group White Water Rafting" class="img-fluid rounded shadow">
+                        <div class="activity-overlay">
+                            <h5 class="text-white fw-bold">White Water Rafting</h5>
+                            <p class="text-white-50">Thrilling rapids with expert guides</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="activity-card">
+                        <img src="images/photos/BuzBi-56.jpg" alt="Professional Rafting" class="img-fluid rounded shadow">
+                        <div class="activity-overlay">
+                            <h5 class="text-white fw-bold">Adventure Rafting</h5>
+                            <p class="text-white-50">Multi-person rapids experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="activity-card">
+                        <img src="images/photos/Gorilla.jpg" alt="Gorilla Trekking" class="img-fluid rounded shadow">
+                        <div class="activity-overlay">
+                            <h5 class="text-white fw-bold">Gorilla Trekking</h5>
+                            <p class="text-white-50">Trek through misty forest canopies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="activity-card">
+                        <img src="images/photos/BuzBi-59.jpg" alt="Rafting Adventure" class="img-fluid rounded shadow">
+                        <div class="activity-overlay">
+                            <h5 class="text-white fw-bold">River Adventures</h5>
+                            <p class="text-white-50">Navigate challenging white-water sections</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="activity-card">
+                        <img src="images/photos/BuzBi-58.jpg" alt="Scenic River Rafting" class="img-fluid rounded shadow">
+                        <div class="activity-overlay">
+                            <h5 class="text-white fw-bold">Scenic River Tours</h5>
+                            <p class="text-white-50">Experience pristine natural landscapes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="activity-card">
+                        <img src="images/photos/BuzBi-57.jpg" alt="Cultural Exchange" class="img-fluid rounded shadow">
+                        <div class="activity-overlay">
+                            <h5 class="text-white fw-bold">Cultural Immersion</h5>
+                            <p class="text-white-50">Connect with local communities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Activities List -->
+            <div class="row mt-5 pt-5 border-top">
+                <div class="col-lg-6 mb-4">
+                    <h4 class="fw-bold text-success mb-4">Land & Wildlife Activities</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-binoculars text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Game Viewing</h6>
+                                    <p class="text-muted small">Spot lions, elephants, buffalo, and more in their natural habitats during guided safaris</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-person-hiking text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Gorilla Trekking</h6>
+                                    <p class="text-muted small">Trek through rainforests to encounter endangered mountain gorillas up close</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-camera text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Wildlife Photography</h6>
+                                    <p class="text-muted small">Professional guidance to capture breathtaking wildlife and landscape images</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-sun text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Sunrise/Sunset Tours</h6>
+                                    <p class="text-muted small">Experience magical golden hour moments with stunning African landscapes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h4 class="fw-bold text-success mb-4">Water & Adventure Activities</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-water text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">White Water Rafting</h6>
+                                    <p class="text-muted small">Navigate thrilling rapids with experienced guides on pristine rivers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-sailboat text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Scenic Boat Cruises</h6>
+                                    <p class="text-muted small">Relaxing cruises on pristine lakes with stunning wildlife viewing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-users text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Cultural Exchanges</h6>
+                                    <p class="text-muted small">Immerse yourself in local traditions and connect with communities</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-campground text-success me-3" style="font-size: 1.5rem; margin-top: 5px;"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Camping Expeditions</h6>
+                                    <p class="text-muted small">Sleep under the stars with authentic African wilderness experiences</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-light py-5" style="background: #B8860B;">
+        <div class="container">
+            <div class="row mb-5">
+                <!-- Column 1: Brand & Description -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="mb-3">
+                        <img src="images/logo/logo-stacked-white.png" alt="Samora Africa Safaris" style="height: 80px;">
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.8);">
+                        Affordable, accessible, and reliable safari adventures for unforgettable African experiences in Uganda and Rwanda.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="safaris.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Safaris</a></li>
+                        <li class="mb-2"><a href="places.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Attractions</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Our Team</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Booking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3 text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">About Samora</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">FAQ</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3 text-white">Contact Info</h5>
+                    <div class="mb-3">
+                        <a href="tel:+256701234567" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-phone me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">+256 777 037 945</span>
+                        </a>
+                    </div>
+                    <div class="mb-3">
+                        <a href="mailto:info@samoraafrica.com" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-envelope me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">info@samoraafrica.com</span>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-map-marker-alt me-2" style="color: #EBBF80; margin-top: 2px;"></i>
+                        <span style="color: rgba(255,255,255,0.8);">Plot 123, Safari Avenue<br>Kampala, Uganda</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid rgba(235, 191, 128, 0.3); padding-top: 30px;">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2026 Samora Africa Safaris. All rights reserved. Adventure Beyond Expectations.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="social-link text-decoration-none" style="color: #EBBF80;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
