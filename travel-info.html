@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Info - Samora Africa Safaris</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="mailto:info@samoraafrica.com" class="text-white text-decoration-none small">
+                            <i class="fas fa-envelope me-2"></i>info@samoraafrica.com
+                        </a>
+                        <a href="tel:+256772859324" class="text-white text-decoration-none small">
+                            <i class="fas fa-phone me-2"></i>+256 772 859 324
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end d-none d-md-block">
+                    <div class="d-flex align-items-center justify-content-end gap-3">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="text-white" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="text-white" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/256772859324" target="_blank" rel="noopener" class="text-white" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo/samora-africa-logo.png" alt="Samora Africa Safaris" style="height: 45px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="safarisDropdown" role="button" data-bs-toggle="dropdown">
+                            Safaris Packages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="safarisDropdown">
+                            <li><a class="dropdown-item" href="safaris.html">All Safaris</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=uganda">Uganda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=rwanda">Rwanda</a></li>
+                            <li><a class="dropdown-item" href="safaris.html?country=combined">Combined</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="placesDropdown" role="button" data-bs-toggle="dropdown">
+                            Places to Visit
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="placesDropdown">
+                            <li><h6 class="dropdown-header">Uganda</h6></li>
+                            <li><a class="dropdown-item" href="places.html#uganda">Explore Uganda</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Rwanda</h6></li>
+                            <li><a class="dropdown-item" href="places.html#rwanda">Explore Rwanda</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown">
+                            Info
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="travel-info.html?page=uganda">Uganda</a></li>
+                            <li><a class="dropdown-item" href="travel-info.html?page=visa">Visa Info</a></li>
+                            <li><a class="dropdown-item" href="travel-info.html?page=health">Health</a></li>
+                            <li><a class="dropdown-item" href="travel-info.html?page=safety">Safety</a></li>
+                            <li><a class="dropdown-item" href="travel-info.html?page=climate">Uganda's Climate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html#company">Company</a></li>
+                            <li><a class="dropdown-item" href="about.html#team">Our Team</a></li>
+                            <li><a class="dropdown-item" href="about.html#why">Why Choose Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Page Header -->
+    <div class="bg-success text-white py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold" id="pageTitle">Travel Information</h1>
+            <p class="fs-5" id="pageSubtitle">Essential travel guides for Uganda and Rwanda</p>
+        </div>
+    </div>
+
+    <style>
+        .info-nav-link {
+            color: #5a3e00;
+            background: #fdf8ef;
+            border: 1px solid #f0e0c0;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .info-nav-link:hover {
+            background: #EBBF80;
+            color: #333;
+        }
+        .info-nav-link.active {
+            background: #B8860B;
+            color: #fff;
+            border-color: #B8860B;
+        }
+        .info-nav-link.active i {
+            color: #fff;
+        }
+        .info-nav-link i {
+            color: #B8860B;
+            font-size: 1.1rem;
+        }
+    </style>
+
+    <!-- Main Content with Sidebar -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div class="col-lg-3 mb-4">
+                    <div class="sticky-top" style="top: 90px;">
+                        <h6 class="fw-bold text-uppercase mb-3" style="color: #B8860B; letter-spacing: 1px;">Info Sections</h6>
+                        <a href="?page=uganda" class="info-nav-link d-flex align-items-center text-decoration-none p-3 rounded mb-2 active" data-page="uganda" onclick="switchInfoPage('uganda'); return false;">
+                            <i class="fas fa-flag me-3" style="width: 20px; text-align: center;"></i>
+                            <span>About Uganda</span>
+                        </a>
+                        <a href="?page=visa" class="info-nav-link d-flex align-items-center text-decoration-none p-3 rounded mb-2" data-page="visa" onclick="switchInfoPage('visa'); return false;">
+                            <i class="fas fa-passport me-3" style="width: 20px; text-align: center;"></i>
+                            <span>Visa Information</span>
+                        </a>
+                        <a href="?page=health" class="info-nav-link d-flex align-items-center text-decoration-none p-3 rounded mb-2" data-page="health" onclick="switchInfoPage('health'); return false;">
+                            <i class="fas fa-heartbeat me-3" style="width: 20px; text-align: center;"></i>
+                            <span>Health in Uganda</span>
+                        </a>
+                        <a href="?page=safety" class="info-nav-link d-flex align-items-center text-decoration-none p-3 rounded mb-2" data-page="safety" onclick="switchInfoPage('safety'); return false;">
+                            <i class="fas fa-shield-alt me-3" style="width: 20px; text-align: center;"></i>
+                            <span>Safety in Uganda & Rwanda</span>
+                        </a>
+                        <a href="?page=climate" class="info-nav-link d-flex align-items-center text-decoration-none p-3 rounded mb-2" data-page="climate" onclick="switchInfoPage('climate'); return false;">
+                            <i class="fas fa-cloud-sun me-3" style="width: 20px; text-align: center;"></i>
+                            <span>Uganda's Climate</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="col-lg-9">
+                    <!-- About Uganda -->
+                    <div id="info-uganda" class="info-content" style="display: block;">
+                        <h3 class="fw-bold mb-2" style="color: #B8860B;">About Uganda</h3>
+                        <p class="text-muted mb-4">Discover the Pearl of Africa</p>
+                        <hr class="mb-4">
+                        <div class="text-samora">
+                            <p class="text-muted">Brief info about Uganda</p>
+<p class="text-muted">Uganda is endowed enormously with numerous natural resources that enthrall, attract, and captivate travelers from all across the world. The country has lakes, rivers, mountains, vast natural forests, and extensive savannah grasslands, making it a wonderful and unique travel destination.</p>
+<p class="text-muted">With its abundant natural resources, the country provides a wide range of adventure experiences, including the following;</p>
+<h5 class="fw-bold mb-3">1. Tracking primates</h5>
+<p class="text-muted">Uganda has numerous habitats for 20 species of primates, including mountain gorillas, chimpanzees, golden monkeys, and many other primates.</p>
+<p class="text-muted">The country is home to more than half of the world’s remaining mountain gorillas out of the three countries that protect them in their natural habitat. Therefore, Uganda offers travelers interested in tracking gorillas a 99% chance of spotting them. As a result, nature-loving visitors to Uganda will find the country more exciting and rewarding in offering adventure experiences.</p>
+<p class="text-muted">In addition to tracking mountain gorillas, Uganda also offers opportunities to track chimpanzees and golden monkeys. Kibale National Park, Budongo Forest, Kalinzu Forest Reserve, Bugoma Central Forest Reserve, and Kyambura Gorge provide excellent opportunities to see chimpanzees in their natural setting. Equally so, Mgahinga National Park is home to golden monkeys, offering visitors an opportunity to see them.</p>
+<p class="text-muted">While tracking chimpanzees or mountain gorillas in Uganda, you may spot other primates such as red-tailed monkeys, black and white colobus monkeys, L&#x27;Hoest monkeys, Olive baboons, blue monkeys, De Brazza&#x27;s monkeys, grey-cheeked mangabey, patas monkeys, red colobus monkeys, owl-faced monkeys, Dent&#x27;s Mona monkeys, Vervet monkeys, Ugandan red colobus monkeys, and Bushbabies, among others.</p>
+<h5 class="fw-bold mb-3">2. Wildlife viewing experiences</h5>
+<p class="text-muted">Uganda offers wildlife viewing adventures in several ecosystems, including expansive, richly endowed savannah grasslands. Game viewing occurs in numerous protected areas, including Murchison Falls, Queen Elizabeth, Kidepo Valley, Lake Mburo, and Semuliki National Parks.</p>
+<p class="text-muted">In addition to the major national parks, the country boasts several game reserves that serve as home to a diverse range of wildlife. These, among others, include Pian-Upe, Toro Semuliki, and Ziwa Rhino Sanctuary. Visiting Uganda for game-watching presents guests with an opportunity to encounter several species of birds and animals, including the Big Five of Africa.</p>
+<h5 class="fw-bold mb-3">3. Rafting and boat trips</h5>
+<p class="text-muted">While in Uganda, visitors may enjoy boat trips, whitewater rafting, tubing, and sport fishing on several water bodies. The Nile River offers opportunities for successful rafting and tubing adventure activities along its various categories of waterfalls and rapids.</p>
+<p class="text-muted">When it comes to boat trips, Uganda boasts a variety of water bodies that offer excursions. Lake Victoria, Africa&#x27;s biggest freshwater lake, provides scheduled, exclusive private and group (shared) safe boat trips for relaxing moments. There are also planned boat tours on Lake Mburo, the Kazinga Channel, and the River Nile, where visitors may see aquatic species that come to the riverbanks or lakeshores to drink and cool off. These water bodies are home to large populations of hippos and crocodiles.</p>
+<h5 class="fw-bold mb-3">4. Community tours</h5>
+<p class="text-muted">Several ethnic groupings, each with its own cultural norms and behaviors, make up Uganda. The many languages spoken, as well as the varying economic, social, and traditional customs, demonstrate the existing heterogeneity in the cultural makeup of different groups.</p>
+<p class="text-muted">Community tours, therefore, offer guests a better understanding of the differences among Africans while also breaking down misconceptions. As a result, we at Samora Africa Safaris incorporate village visits into some multi-day tour packages to provide guests with an authentic African experience.</p>
+<h5 class="fw-bold mb-3">5. Bird watching</h5>
+<p class="text-muted">Uganda has many excellent birding spots where you may see a wide variety of bird species. These areas include the major and renowned natural rain forests like Kibale, Bwindi, Budongo, Bugoma, Mpanga, Kalinzu, and Mabira, which are home to forest birds and the Albertine endemics.</p>
+<p class="text-muted">Savannah parks, such as Kidepo Valley, Murchison Falls, Queen Elizabeth, and Lake Mburo National Parks, are other distinctive bird-watching areas.</p>
+<p class="text-muted">Entebbe town and its surroundings are particularly well-recognized birding spots for forest and water birds.</p>
+<p class="text-muted">The country’s attractiveness for bird-watching enthusiasts extends to other prominent areas, such as Mabamba Swamp, which is home to the distinctive prehistoric shoebill, as well as other notable birding sites like Semliki National Park and Ziwa rhino sanctuary.</p>
+<p class="text-muted">The remarkable array of birding spots illustrates the dedication of Uganda’s effort to conserve the diverse ecosystems and reaffirms its position as a global center for bird-watching lovers seeking a unique and enriching adventure.</p>
+<h5 class="fw-bold mb-3">5. Holiday getaways</h5>
+<p class="text-muted">Uganda offers a variety of options for people from around the world to travel to for leisure, vacations, or honeymoons, allowing them to experience the closeness of nature with their loved ones.</p>
+<p class="text-muted">In the national parks of Murchison Falls, Queen Elizabeth, Kidepo Valley, Bwindi, Kibale, and Lake Mburo, there are facilities that provide secluded and intimate lodging services. As a result, visitors on vacation or honeymooners have the exclusive opportunity to experience their most memorable moments close to nature, as these places are in quiet areas far from urban noise.</p>
+<p class="text-muted">Major cities such as Kampala, Jinja, Fort Portal, and Entebbe offer accommodations equipped with modern amenities, ensuring an enjoyable vacation. Several luxury hotels and resorts, perfectly positioned near lakeshores or river banks, offer guests on vacation or honeymoon modern service, delicious food, outstanding hospitality, and unforgettable experiences.</p>
+<p class="text-muted">To perfectly organize a successful vacation or honeymoon holiday, we involve the clients to ensure your holiday is tailor-made to suit their preferences and budget.</p>
+<h5 class="fw-bold mb-3">6. Mountain climbing and Hiking</h5>
+<p class="text-muted">Uganda provides plenty of opportunities for mountain climbers who want to conquer high altitudes and explore various landscapes and terrains. The mountains, with their varied elevations and peaks, offer a platform for individuals to test their endurance and abilities amidst the challenges of their terrain. From technically challenging climbs to serene hikes, Uganda caters to all levels of adventurers.</p>
+                        </div>
+                    </div>
+                    <!-- Visa Information -->
+                    <div id="info-visa" class="info-content" style="display: none;">
+                        <h3 class="fw-bold mb-2" style="color: #B8860B;">Visa Information</h3>
+                        <p class="text-muted mb-4">Entry requirements for Uganda and Rwanda</p>
+                        <hr class="mb-4">
+                        <div class="text-samora">
+                            <h5 class="fw-bold mb-3">1. ACQUIRING UGANDAN VISA</h5>
+<p class="text-muted">Single entry/ Tourist Visa</p>
+<p class="text-muted">All persons planning to travel to Uganda from non-visa-exempt countries for tourism, holidays, business, or seeking medical care must apply for and obtain a visa.</p>
+<p class="text-muted">The Ministry of Internal Affairs, through the Directorate of Citizenship and Immigration Control, issues the Ugandan visa, which you can obtain online by visiting this link.</p>
+<p class="text-muted">We recommend applying for the Ugandan visa at least two months before the entry date, as the approval process typically takes three working days. Upon approval, the visa becomes valid for 90 days from the date of issue.</p>
+<h5 class="fw-bold mb-3">Mandatory documents</h5>
+<p class="text-muted">Application for a Ugandan visa requires applicants to submit mandatory documents; information about these documents is available at https://visas.immigration.go.ug/#/help/visa.</p>
+<h5 class="fw-bold mb-3">East African Tourist Visa</h5>
+<p class="text-muted">This multiple-entry visa is a joint tourist visa that allows travelers from any country to visit the three neighboring nations of Uganda, Rwanda and Kenya for tourism purposes.</p>
+<p class="text-muted">Applicants for the East African Tourist Visa should note that entry into the region must begin with the country that issued the visa.</p>
+<h5 class="fw-bold mb-3">Visa cost</h5>
+<p class="text-muted">The East African Tourist Visa costs 100 USD, while the Uganda Ordinary/Tourist Single Entry Visa costs 50 USD. Please note that you must pay for visa applications online, subject to a 3% surcharge fee.</p>
+<h5 class="fw-bold mb-3">Passport Validity</h5>
+<p class="text-muted">An applicant for a Ugandan visa must possess a genuine passport with a minimum validity of at least 6 months from the intended entrance date into the country. The passport should have at least two blank visa pages for immigration stamps.</p>
+<h5 class="fw-bold mb-3">2. ACQUIRING RWANDAN VISA</h5>
+<p class="text-muted">Anyone planning to travel to Rwanda from visa-exempt countries must apply for an entry visa online or in person upon arrival. The Visa application services upon arrival are available at Kigali International Airport and all land borders, and this service is provided by the Directorate General of Immigration and Emigration (DGIE).</p>
+<h5 class="fw-bold mb-3">Passport Validity</h5>
+<p class="text-muted">To apply for a Rwandan visa, you must hold a valid passport with a minimum validity of six months from your intended entrance date into Rwanda. Your passport should have at least two blank visa pages for immigration stamps.</p>
+<h5 class="fw-bold mb-3">Mandatory documents</h5>
+<p class="text-muted">Applicants for a Rwandan visa are required to submit scanned copies of mandatory documents that include;</p>
+<ul class="text-muted">
+<li>The bio-data page of the passport in PDF format and should not exceed 500KB.</li>
+<li>A valid yellow fever vaccination certificate is required for travelers from countries classified as yellow fever endemic zones or those experiencing active yellow fever outbreaks.</li>
+<li>One recent passport-sized photograph with a white background, JPG/JPEG format, and file size of 500KB or less</li>
+<li>An application letter in PDF format that does not exceed 500 KB</li>
+</ul>
+<h5 class="fw-bold mb-3">East African Tourist Visa</h5>
+<p class="text-muted">This multiple-entry visa is a joint tourist visa that allows travelers from any country to visit the three neighboring nations of Rwanda, Uganda, and Kenya for tourism purposes.</p>
+<p class="text-muted">Applicants for the East African Tourist Visa should note that entry into the region must begin with the country that issued the visa.</p>
+<h5 class="fw-bold mb-3">Visa cost</h5>
+<p class="text-muted">The East African Tourist Visa costs 100 USD, while the Rwandan Ordinary/Tourist Single Entry Visa costs 50 USD. Please note that you must pay for visa applications online, subject to a 3% surcharge fee.</p>
+<p class="text-muted">Upon successful submission and payment through IremboGov, the Directorate General of Immigration and Emigration will send an email confirmation acknowledging receipt of your application. Visa processing typically requires 3-7 business days, after which you will receive notification of your application status via the same email address.</p>
+                        </div>
+                    </div>
+                    <!-- Health in Uganda -->
+                    <div id="info-health" class="info-content" style="display: none;">
+                        <h3 class="fw-bold mb-2" style="color: #B8860B;">Health in Uganda</h3>
+                        <p class="text-muted mb-4">Health advice for travelers</p>
+                        <hr class="mb-4">
+                        <div class="text-samora">
+                            <p class="text-muted">Health in Uganda</p>
+<p class="text-muted">As a developing country, Uganda continues to confront health-related challenges, including the prevalence of certain infectious illnesses and restricted access to healthcare facilities, particularly in rural areas. Even though the country has previously experienced outbreaks of Ebola and the Zika virus epidemics, they have all been contained, rendering the country safe for visitors.</p>
+<p class="text-muted">Uganda, therefore, does not have serious health concerns that would discourage visitors from coming.</p>
+<p class="text-muted">We recommend that travelers planning to visit Uganda consider the following health-related information as crucial for their safety:</p>
+<h5 class="fw-bold mb-3">Mandatory Vaccinations</h5>
+<ul class="text-muted">
+<li>Vaccination against yellow fever is mandatory before admission into Uganda. A Yellow Fever Vaccination Certificate is required during the process of applying for a Uganda visa and on arrival at any of the entry points in the country.</li>
+<li>Traveling to Rwanda, a yellow fever vaccination certificate is mandatory for travelers from yellow fever-prone countries and any country with an active yellow fever transmission outbreak.</li>
+</ul>
+<h5 class="fw-bold mb-3">Recommended Vaccinations</h5>
+<ul class="text-muted">
+<li>Apart from yellow fever, travelers to Uganda are advised to receive vaccinations against meningitis, hepatitis B and A, tetanus, and typhoid. Vaccination against these illnesses is a recommendation and not mandatory.</li>
+<li>Travelers to Uganda should also take prescription medicine to prevent malaria. You may need to take the prescribed medicine a few days before, during, and after your trip. Please consult with your doctor about which malaria medication you should take.</li>
+<li>As an equatorial country, Uganda has mosquitoes that cause and transmit malaria. Visitors to Uganda are advised to sleep under treated mosquito nets, in addition to using malaria prophylaxis, to reduce the risk of infection.</li>
+<li>Before traveling, it is highly advisable to acquire personal travel insurance to cover any emergency medical care and other insurable risks.</li>
+</ul>
+                        </div>
+                    </div>
+                    <!-- Safety in Uganda & Rwanda -->
+                    <div id="info-safety" class="info-content" style="display: none;">
+                        <h3 class="fw-bold mb-2" style="color: #B8860B;">Safety in Uganda & Rwanda</h3>
+                        <p class="text-muted mb-4">Travel safety information</p>
+                        <hr class="mb-4">
+                        <div class="text-samora">
+                            <p class="text-muted">Uganda and Rwanda are safe destinations for tourists from the world over, and the respective governments remain committed to ensuring the safety and security of both the nations and their visitors. However, as with any travel destination, there are special considerations and precautions that travelers should keep in mind.</p>
+<ul class="text-muted">
+<li>All major tourist destinations, including national parks, are generally safe. These areas are well-secured and regularly patrolled by armed park rangers and other security agencies to ensure the safety of wildlife and visitors to the parks. However, we advise visitors to adhere to the rules and regulations established by the park authorities. These guidelines are vital in ensuring the safety of both guests and wildlife. Such rules include staying out of restricted zones, keeping a safe distance from animals at all times, and remaining inside vehicles during park visits unless in designated safe areas.</li>
+<li>In crowded areas of Kampala, Kigali, and other urban centers, petty crimes such as pickpocketing and bag-snatching can occur. We advise visitors to stay alert, avoid openly displaying valuables like mobile phones, cash, and electronic devices, and take precautions to safeguard their belongings.</li>
+<li>Gorilla trekking and other wildlife viewing experiences in both countries (Uganda and Rwanda) are generally safe. However, during these adventure activities, participants are advised to follow the guidelines provided by the park(s) authorities and guides to ensure safety.</li>
+<li>The road conditions and driving standards in Africa are unique from what most visitors from other countries are used to. To prevent accidents and reduce other potential risks associated with road travel, we employ experienced drivers and avoid traveling at night.</li>
+<li>African countries boast a rich cultural diversity characterized by many traditions and customs. We advise guests in any African country to respect local customs, dress modestly, and always ask for consent before taking photographs of individuals.</li>
+</ul>
+                        </div>
+                    </div>
+                    <!-- Uganda's Climate -->
+                    <div id="info-climate" class="info-content" style="display: none;">
+                        <h3 class="fw-bold mb-2" style="color: #B8860B;">Uganda's Climate</h3>
+                        <p class="text-muted mb-4">Weather and seasons guide</p>
+                        <hr class="mb-4">
+                        <div class="text-samora">
+                            <p class="text-muted">Uganda&#x27;s climate is one of the most attractive natural features that make the country an ideal destination for travelers seeking unique and rewarding experiences. With its pleasant, year-round tropical weather, Uganda offers a perfect setting for memorable vacations. The country&#x27;s position astride the equator and the diverse topography of its regions, which range from high to low altitudes, influence a balanced and excellent weather pattern that guarantees beautiful scenery, diverse wildlife, and cultures.</p>
+<h5 class="fw-bold mb-3">1. Seasons (Rainfall and Dry seasons)</h5>
+<h5 class="fw-bold mb-3">A. Rainfall seasons</h5>
+<p class="text-muted">Uganda’s climate is generally tropical, characterized by two annual rainy seasons influenced by the Inter-Tropical Convergence Zone (ITCZ). The rainy seasons occur from March to May and September to December. The southern part of the country typically experiences these rainy seasons, while the northern region, located outside the tropical belt, experiences one extended rainy season from March to October.</p>
+<p class="text-muted">These seasons are characterized by lush vegetation, flowering flora, and increased water supplies, making them perfect for bird watching, photography, and experiencing the country’s dynamic ecosystems at their best.</p>
+<h5 class="fw-bold mb-3">B. Dry seasons</h5>
+<p class="text-muted">Uganda experiences two distinct dry seasons, from December to February and June to August, which are particularly important for adventure activities. During these months, the weather is dry and sunny, creating perfect conditions for wildlife safaris, hiking, and other wildlife-viewing adventures. The dry seasons provide the best opportunities to observe animals in the savannah parks as they gather around water sources, making sightings both frequent and highly rewarding.</p>
+<h5 class="fw-bold mb-3">2. Temperature(s)</h5>
+<p class="text-muted">Uganda experiences moderate temperatures ranging between 21°C (70°F) and 25°C (77°F) throughout the year. This medium climate is unique to Uganda and crucial to visitors, as it reduces the extremes of heat and cold observed in other parts of the world.</p>
+<p class="text-muted">However, there are regional climatic differences in Uganda. While the higher regions, such as the Rwenzori Mountains and the southwestern part of the country, have colder temperatures, the northern and eastern plains are often drier than the central and western regions. The central part of Uganda, which includes Kampala and Entebbe, has a generally warm and humid climate with occasional afternoon precipitates.</p>
+<p class="text-muted">These regional climatic variations enable visitors in Uganda to enjoy a wide range of weather conditions and landscapes within a single destination (Uganda).</p>
+<p class="text-muted">Uganda’s climate guarantees pleasant, memorable, and profoundly enriching adventures beyond expectations, whether hiking through the misty Bwindi to see gorillas, doing a safari over the expansive savannahs, or exploring the calm shores of Lake Victoria. The country is an exceptional choice for travelers interested in a destination that combines natural beauty, adventure, and a pleasant climate.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const pageTitles = {
+            uganda: { title: "About Uganda", subtitle: "Discover the Pearl of Africa" },
+            visa: { title: "Visa Information", subtitle: "Entry requirements for Uganda and Rwanda" },
+            health: { title: "Health in Uganda", subtitle: "Health advice for travelers" },
+            safety: { title: "Safety in Uganda & Rwanda", subtitle: "Travel safety information" },
+            climate: { title: "Uganda's Climate", subtitle: "Weather and seasons guide" }
+        };
+
+        function switchInfoPage(page) {
+            // Hide all content sections
+            document.querySelectorAll('.info-content').forEach(el => el.style.display = 'none');
+            // Show selected section
+            const target = document.getElementById('info-' + page);
+            if (target) target.style.display = 'block';
+
+            // Update sidebar active state
+            document.querySelectorAll('.info-nav-link').forEach(el => el.classList.remove('active'));
+            const activeLink = document.querySelector('.info-nav-link[data-page="' + page + '"]');
+            if (activeLink) activeLink.classList.add('active');
+
+            // Update header
+            if (pageTitles[page]) {
+                document.getElementById('pageTitle').textContent = pageTitles[page].title;
+                document.getElementById('pageSubtitle').textContent = pageTitles[page].subtitle;
+            }
+
+            // Update URL without reload
+            history.pushState({ page: page }, '', 'travel-info.html?page=' + page);
+            document.title = pageTitles[page].title + ' - Samora Africa Safaris';
+            window.scrollTo(0, 0);
+        }
+
+        // Handle back/forward browser navigation
+        window.addEventListener('popstate', function() {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page') || 'uganda';
+            switchInfoPage(page);
+        });
+
+        // Init on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page') || 'uganda';
+            switchInfoPage(page);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="text-light py-5" style="background: #B8860B;">
+        <div class="container">
+            <div class="row mb-5">
+                <!-- Column 1: Brand & Description -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="mb-3">
+                        <img src="images/logo/logo-stacked-white.png" alt="Samora Africa Safaris" style="height: 80px;">
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.8);">
+                        Affordable, accessible, and reliable safari adventures for unforgettable African experiences in Uganda and Rwanda.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="safaris.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Safaris Packages</a></li>
+                        <li class="mb-2"><a href="places.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Places to Visit</a></li>
+                        <li class="mb-2"><a href="activities.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Activities</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3 text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">About Us</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Terms & Conditions</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">FAQ</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3 text-white">Contact Info</h5>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-signs-post me-2" style="color: #EBBF80; margin-top: 2px;"></i>
+                        <span style="color: rgba(255,255,255,0.8);">P.O.Box 179509 <br>Kampala, Uganda</span>
+                    </div>
+                    <div class="mb-3">
+                        <a href="tel:+256701234567" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-phone me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">+256 771 190 026</span>
+                        </a>
+                    </div>
+                    <div class="mb-3">
+                        <a href="mailto:info@samoraafrica.com" class="text-decoration-none d-flex align-items-center mb-2">
+                            <i class="fas fa-envelope me-2" style="color: #EBBF80;"></i>
+                            <span style="color: rgba(255,255,255,0.8);">info@samoraafrica.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div style="border-top: 1px solid rgba(235, 191, 128, 0.3); padding-top: 30px;">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2026 Samora Africa Safaris. All rights reserved. Adventure Beyond Expectations.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="social-link text-decoration-none" style="color: #EBBF80;"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
