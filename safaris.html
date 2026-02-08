@@ -7,6 +7,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Safari Card Grid */
+        .safari-card { transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; border: none; overflow: hidden; border-radius: 10px; height: 100%; display: flex; flex-direction: column; }
+        .safari-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .safari-card img { height: 240px; object-fit: cover; }
+        .safari-card .card-body { flex: 1; display: flex; flex-direction: column; }
+        .safari-card .view-details-btn { margin-top: auto; }
+        .price-gold { color: #B8860B; font-size: 1.3rem; font-weight: bold; }
+        .view-details-btn { border: 2px solid #B8860B; color: #B8860B; background: white; padding: 8px 0; border-radius: 5px; font-weight: 600; transition: all 0.3s; }
+        .view-details-btn:hover { background-color: #B8860B; color: white; }
+
+        /* Detail View */
+        .detail-page { display: none; }
+        .detail-page.active { display: block; }
+
+        /* Tabs */
+        .tabs-nav { display: flex; gap: 0; margin-bottom: 2rem; border-radius: 6px; overflow: hidden; }
+        .tabs-nav button { padding: 12px 24px; border: none; font-weight: 600; font-size: 0.9rem; color: #5a3e00; background-color: #EBBF80; cursor: pointer; transition: all 0.3s; letter-spacing: 0.5px; }
+        .tabs-nav button.active { background-color: #7a5a00; color: #fff; }
+        .tabs-nav button:hover { background-color: #d4a860; }
+
+        /* Package Details Grid */
+        .package-details { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .detail-item { background: #f8f9fa; padding: 12px 15px; border-radius: 6px; border-left: 3px solid #B8860B; }
+        .detail-item label { color: #B8860B; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 2px; display: block; }
+        .detail-item p { margin: 0; font-weight: 600; color: #333; }
+
+        /* Itinerary */
+        .itinerary-day { margin-bottom: 0; }
+        .itinerary-day-header { background: #B8860B; color: white; padding: 12px 18px; font-weight: 600; border-radius: 6px 6px 0 0; }
+        .itinerary-day-body { padding: 15px 18px; background: #fdf8ef; border: 1px solid #f0e0c0; border-top: none; border-radius: 0 0 6px 6px; margin-bottom: 15px; }
+        .itinerary-day-body p { color: #555; line-height: 1.7; }
+
+        /* Accommodation Table */
+        .accommodation-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .accommodation-table th { background-color: #B8860B; color: white; padding: 12px 15px; text-align: left; }
+        .accommodation-table td { padding: 12px 15px; border-bottom: 1px solid #e8e0d0; }
+        .accommodation-table tr:hover td { background-color: #fdf8ef; }
+
+        /* Request Button */
+        .request-btn { background-color: #B8860B; color: white; padding: 15px 0; font-weight: bold; border: none; cursor: pointer; border-radius: 6px; font-size: 1rem; letter-spacing: 1px; transition: all 0.3s; }
+        .request-btn:hover { background-color: #EBBF80; color: #333; }
+
+        /* Help Section */
+        .help-section { background-color: #fdf8ef; padding: 20px; border-radius: 8px; border: 1px solid #f0e0c0; }
+
+        /* Similar Listing */
+        .similar-item { transition: all 0.3s; padding: 8px; border-radius: 6px; cursor: pointer; }
+        .similar-item:hover { background: #fdf8ef; }
+
+        /* Star Rating */
+        .star-rating i { cursor: pointer; font-size: 1.5rem; color: #ddd; transition: color 0.2s; }
+        .star-rating i.active, .star-rating i:hover { color: #B8860B; }
+
+        /* Back Button */
+        .back-btn { color: #B8860B; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .back-btn:hover { color: #EBBF80; }
+
+        /* Hero Image in Detail */
+        .detail-hero { height: 400px; border-radius: 10px; overflow: hidden; position: relative; }
+        .detail-hero img { width: 100%; height: 100%; object-fit: cover; }
+
+        @media (max-width: 768px) {
+            .package-details { grid-template-columns: 1fr 1fr; }
+            .tabs-nav button { padding: 10px 14px; font-size: 0.75rem; }
+            .detail-hero { height: 250px; }
+        }
+    </style>
 </head>
 <body>
     <!-- Top Bar -->
@@ -41,19 +109,20 @@
             <a class="navbar-brand" href="index.html">
                 <img src="images/logo/samora-africa-logo.png" alt="Samora Africa Safaris" style="height: 45px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="safarisDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="safarisDropdown" role="button" data-bs-toggle="dropdown">
                             Safaris Packages
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="safarisDropdown">
+                            <li><a class="dropdown-item" href="safaris.html">All Safaris</a></li>
                             <li><a class="dropdown-item" href="safaris.html?country=uganda">Uganda</a></li>
                             <li><a class="dropdown-item" href="safaris.html?country=rwanda">Rwanda</a></li>
                             <li><a class="dropdown-item" href="safaris.html?country=combined">Combined</a></li>
@@ -104,216 +173,179 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <div class="bg-success text-white py-5">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Safari Packages</h1>
-            <p class="fs-5">Choose your perfect adventure</p>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Sidebar Filters -->
-            <div class="col-lg-3 mb-4">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="fw-bold mb-3">Filter</h5>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Destination</label>
-                            <select class="form-select" id="countryFilter">
-                                <option value="all">All Countries</option>
-                                <option value="uganda">Uganda</option>
-                                <option value="rwanda">Rwanda</option>
-                                <option value="combined">Combined</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Price Range</label>
-                            <select class="form-select">
-                                <option>Any Price</option>
-                                <option>$500 - $1000</option>
-                                <option>$1000 - $2000</option>
-                                <option>$2000+</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Duration</label>
-                            <select class="form-select">
-                                <option>Any Duration</option>
-                                <option>3-5 Days</option>
-                                <option>6-10 Days</option>
-                                <option>10+ Days</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+    <!-- ============ LISTING VIEW ============ -->
+    <div id="listingView">
+        <!-- Page Header -->
+        <div class="bg-success text-white py-5">
+            <div class="container">
+                <h1 class="display-4 fw-bold">Safari Packages</h1>
+                <p class="fs-5">Choose your perfect adventure</p>
             </div>
+        </div>
 
-            <!-- Safari Listings -->
-            <div class="col-lg-9">
-                <!-- Safari 1 -->
-                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="uganda">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="images/photos/Elephant ishasha.jpg" class="img-fluid rounded-start h-100" alt="Uganda Wildlife Safari" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Uganda Wildlife, Gorilla & Chimpanzee Safari - 7 Days</h5>
-                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Uganda</p>
-                                <p class="card-text">A captivating blend of wildlife encounters in Uganda's iconic conservation areas. Meet mountain gorillas in Bwindi, track chimpanzees in Kibale Forest, and enjoy game drives in Queen Elizabeth and Lake Mburo National Parks.</p>
-
-                                <div class="mb-3">
-                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
-                                    <ul class="small text-muted">
-                                        <li>Day 1-2: Entebbe & Kibale Forest (Chimpanzee Tracking)</li>
-                                        <li>Day 3-4: Queen Elizabeth NP & Bwindi</li>
-                                        <li>Day 5-7: Gorilla Tracking & Lake Mburo NP</li>
-                                    </ul>
-                                </div>
-
-                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">Contact for pricing</span></p>
-                                <p class="mb-3"><strong>Group Size:</strong> 2-8 people</p>
-                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Uganda Wildlife, Gorilla & Chimpanzee Safari - 7 Days">View Full Itinerary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Safari 2 -->
-                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="uganda">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="images/photos/Hippos in water.jpg" class="img-fluid rounded-start h-100" alt="Queen Elizabeth Park" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Queen Elizabeth & Bwindi Adventure - 5 Days</h5>
-                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Uganda</p>
-                                <p class="card-text">Experience Uganda's most iconic parks. Enjoy game drives on Kasenyi Plains, boat cruises on Kazinga Channel with massive hippo populations, and encounter tree-climbing lions in the Ishasha sector.</p>
-
-                                <div class="mb-3">
-                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
-                                    <ul class="small text-muted">
-                                        <li>Day 1-2: Transfer & Queen Elizabeth Game Drives</li>
-                                        <li>Day 3: Kazinga Channel Boat Cruise</li>
-                                        <li>Day 4-5: Ishasha Tree-Climbing Lions & Return</li>
-                                    </ul>
-                                </div>
-
-                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">Contact for pricing</span></p>
-                                <p class="mb-3"><strong>Group Size:</strong> 2-15 people</p>
-                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Queen Elizabeth & Bwindi Adventure - 5 Days">View Full Itinerary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Safari 3 -->
-                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="rwanda">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="images/photos/Gorilla.jpg" class="img-fluid rounded-start h-100" alt="Rwanda Gorilla Trekking" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Magical Rwanda with Gorilla Tracking - 5 Days</h5>
-                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Rwanda</p>
-                                <p class="card-text">Explore the vibrant city of Kigali and traverse Rwanda's Northern, Western, and southwestern provinces. Experience gorilla trekking in Volcanoes National Park, relax at Lake Kivu shores, and walk on the elevated canopy bridge in Nyungwe Forest.</p>
-
-                                <div class="mb-3">
-                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
-                                    <ul class="small text-muted">
-                                        <li>Day 1: Kigali City Tour & Genocide Memorial</li>
-                                        <li>Day 2-3: Volcanoes NP & Gorilla Trekking</li>
-                                        <li>Day 4-5: Nyungwe Forest Canopy Walk & Return</li>
-                                    </ul>
-                                </div>
-
-                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">Contact for pricing</span></p>
-                                <p class="mb-3"><strong>Group Size:</strong> 2-8 people</p>
-                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Magical Rwanda with Gorilla Tracking - 5 Days">View Full Itinerary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Safari 4 -->
-                <div class="card border-0 shadow-sm mb-4 safari-package" data-country="combined">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="images/photos/GIRAFFES MBURO.jpg" class="img-fluid rounded-start h-100" alt="Combined Safari" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Wild Encounters & Adventure in Rwanda - 9 Days</h5>
-                                <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>Rwanda</p>
-                                <p class="card-text">An incredible adventure exploring Rwanda's rich cultural heritage and natural attractions. Wildlife viewing in Akagera, chimpanzee tracking in Nyungwe, gorilla trekking in Volcanoes, and cultural experiences at Iby'Iwacu Village.</p>
-
-                                <div class="mb-3">
-                                    <h6 class="fw-bold mb-2">Itinerary Overview:</h6>
-                                    <ul class="small text-muted">
-                                        <li>Day 1-3: Kigali & Akagera NP Wildlife Safari</li>
-                                        <li>Day 4-6: Nyungwe Forest & Lake Kivu</li>
-                                        <li>Day 7-9: Volcanoes NP Gorilla Trekking & Return</li>
-                                    </ul>
-                                </div>
-
-                                <p class="mb-2"><strong>Price:</strong> <span class="text-success fs-5">Contact for pricing</span></p>
-                                <p class="mb-3"><strong>Group Size:</strong> 2-8 people</p>
-                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#safariModal" data-title="Wild Encounters & Adventure in Rwanda - 9 Days">View Full Itinerary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Safari Grid -->
+        <div class="container my-5">
+            <div class="row" id="safariGrid">
+                <!-- Populated by JS -->
             </div>
         </div>
     </div>
 
-    <!-- Safari Details Modal -->
-    <div class="modal fade" id="safariModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-success text-white">
-                    <h5 class="modal-title" id="modalTitle">Safari Details</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6 class="fw-bold mb-3">Day by Day Breakdown:</h6>
-                    <div id="itineraryContent"></div>
+    <!-- ============ DETAIL VIEW ============ -->
+    <div id="detailView" style="display: none;">
+        <div class="py-3" style="background-color: #fdf8ef; border-bottom: 1px solid #f0e0c0;">
+            <div class="container">
+                <a href="#" class="back-btn" onclick="backToListing(); return false;">
+                    <i class="fas fa-arrow-left me-2"></i>Back to All Safaris
+                </a>
+            </div>
+        </div>
 
-                    <hr class="my-4">
+        <div class="container my-4">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Title & Price -->
+                    <div id="safariTitle" class="mb-4"></div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6 class="fw-bold mb-2">Inclusions:</h6>
-                            <ul class="small">
-                                <li>Accommodation (3-4 star hotels)</li>
-                                <li>Meals (Breakfast, Lunch, Dinner)</li>
-                                <li>Park entrance fees</li>
-                                <li>Professional guide</li>
-                                <li>Vehicle transportation</li>
-                                <li>Domestic flights</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h6 class="fw-bold mb-2">Exclusions:</h6>
-                            <ul class="small">
-                                <li>International flights</li>
-                                <li>Travel insurance</li>
-                                <li>Personal expenses</li>
-                                <li>Tips for guides</li>
-                                <li>Visa fees</li>
-                                <li>Optional activities</li>
-                            </ul>
+                    <!-- Main Image -->
+                    <div class="detail-hero mb-4" id="mainImage"></div>
+
+                    <!-- Tab Navigation -->
+                    <div class="tabs-nav mb-4">
+                        <button class="active" onclick="switchTab('overview', this)">OVERVIEW</button>
+                        <button onclick="switchTab('itinerary', this)">ITINERARY</button>
+                        <button onclick="switchTab('accommodations', this)">ACCOMMODATIONS</button>
+                        <button onclick="switchTab('review', this)">WRITE REVIEW</button>
+                    </div>
+
+                    <!-- OVERVIEW Tab -->
+                    <div id="overview" class="detail-page active">
+                        <div class="package-details" id="packageDetails"></div>
+                        <hr>
+                        <h5 class="fw-bold mb-3">Overview</h5>
+                        <p id="overviewText" class="text-muted" style="line-height: 1.8;"></p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3"><i class="fas fa-check-circle me-2" style="color: #B8860B;"></i>Inclusions</h5>
+                                <ul id="includedList" style="line-height: 2;"></ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2 text-danger"></i>Exclusions</h5>
+                                <ul style="line-height: 2;">
+                                    <li>International flights</li>
+                                    <li>Travel & medical insurance</li>
+                                    <li>Personal expenses & tips</li>
+                                    <li>Visa fees</li>
+                                    <li>Optional activities not in itinerary</li>
+                                    <li>Alcoholic beverages</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- ITINERARY Tab -->
+                    <div id="itinerary" class="detail-page">
+                        <h5 class="fw-bold mb-4">Itinerary</h5>
+                        <div id="itineraryContent"></div>
+                    </div>
+
+                    <!-- ACCOMMODATIONS Tab -->
+                    <div id="accommodations" class="detail-page">
+                        <h5 class="fw-bold mb-4">Accommodations</h5>
+                        <table class="accommodation-table">
+                            <thead>
+                                <tr>
+                                    <th>City</th>
+                                    <th># of Nights</th>
+                                    <th>Superior</th>
+                                    <th>Deluxe</th>
+                                </tr>
+                            </thead>
+                            <tbody id="accommodationsTable"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- WRITE REVIEW Tab -->
+                    <div id="review" class="detail-page">
+                        <h5 class="fw-bold mb-2">Your first-hand experiences really help other travelers. Thanks!</h5>
+                        <p class="text-muted mb-3">Your overall rating of this safari</p>
+                        <div class="star-rating mb-4" id="starRating">
+                            <i class="far fa-star" data-r="1"></i>
+                            <i class="far fa-star" data-r="2"></i>
+                            <i class="far fa-star" data-r="3"></i>
+                            <i class="far fa-star" data-r="4"></i>
+                            <i class="far fa-star" data-r="5"></i>
+                        </div>
+                        <form id="reviewForm" onsubmit="submitReview(event)">
+                            <div class="row mb-3">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Customer Email</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Customer Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Title of your review</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Country</label>
+                                    <select class="form-select">
+                                        <option>Select Country</option>
+                                        <option>United States</option>
+                                        <option>United Kingdom</option>
+                                        <option>Canada</option>
+                                        <option>Australia</option>
+                                        <option>Germany</option>
+                                        <option>France</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Your review</label>
+                                <textarea class="form-control" rows="5" placeholder="Share your experience..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success px-4 py-2">Send Review</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="contact.html" class="btn btn-success">Book Now</a>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <a href="contact.html" class="request-btn w-100 mb-4 d-block text-center text-decoration-none">
+                        <i class="fas fa-paper-plane me-2"></i>REQUEST BOOKING
+                    </a>
+
+                    <div class="help-section mb-4">
+                        <h6 class="fw-bold mb-3">Need Help?</h6>
+                        <p class="small text-muted mb-3">We would be more than happy to help you. Our team advisors are 24/7 at your service to help you.</p>
+                        <div class="mb-2">
+                            <i class="fas fa-phone me-2" style="color: #B8860B;"></i>
+                            <a href="tel:+256772859324" class="text-decoration-none fw-bold" style="color: #B8860B;">+256 772 859 324</a>
+                        </div>
+                        <div class="mb-2">
+                            <i class="fas fa-phone me-2" style="color: #B8860B;"></i>
+                            <a href="tel:+256771190026" class="text-decoration-none fw-bold" style="color: #B8860B;">+256 771 190 026</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope me-2" style="color: #B8860B;"></i>
+                            <a href="mailto:info@samoraafrica.com" class="text-decoration-none" style="color: #B8860B;">info@samoraafrica.com</a>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h6 class="fw-bold mb-3">Similar Listings</h6>
+                            <div id="similarListings"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -323,7 +355,6 @@
     <footer class="text-light py-5" style="background: #B8860B;">
         <div class="container">
             <div class="row mb-5">
-                <!-- Column 1: Brand & Description -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <div class="mb-3">
                         <img src="images/logo/logo-stacked-white.png" alt="Samora Africa Safaris" style="height: 80px;">
@@ -332,29 +363,23 @@
                         Affordable, accessible, and reliable safari adventures for unforgettable African experiences in Uganda and Rwanda.
                     </p>
                 </div>
-
-                <!-- Column 2: Quick Links -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h5 class="fw-bold mb-3 text-white">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="safaris.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Safaris Packages</a></li>
-                        <li class="mb-2"><a href="places.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Places to Visit</a></li>
-                        <li class="mb-2"><a href="info.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Activities</a></li>
+                        <li class="mb-2"><a href="safaris.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">Safaris Packages</a></li>
+                        <li class="mb-2"><a href="places.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">Places to Visit</a></li>
+                        <li class="mb-2"><a href="info.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">Activities</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 3: Company -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-3 text-white">Company</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">About Us</a></li>
-                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Terms & Conditions</a></li>
-                        <li class="mb-2"><a href="faq.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">FAQ</a></li>
-                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8); transition: color 0.3s;">Contact Us</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">About Us</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">Terms & Conditions</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">FAQ</a></li>
+                        <li><a href="contact.html" class="text-decoration-none" style="color: rgba(255,255,255,0.8);">Contact Us</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 4: Contact Info -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="fw-bold mb-3 text-white">Contact Info</h5>
                     <div class="d-flex align-items-start">
@@ -362,7 +387,7 @@
                         <span style="color: rgba(255,255,255,0.8);">P.O.Box 179509 <br>Kampala, Uganda</span>
                     </div>
                     <div class="mb-3">
-                        <a href="tel:+256701234567" class="text-decoration-none d-flex align-items-center mb-2">
+                        <a href="tel:+256771190026" class="text-decoration-none d-flex align-items-center mb-2">
                             <i class="fas fa-phone me-2" style="color: #EBBF80;"></i>
                             <span style="color: rgba(255,255,255,0.8);">+256 771 190 026</span>
                         </a>
@@ -375,12 +400,10 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
             <div style="border-top: 1px solid rgba(235, 191, 128, 0.3); padding-top: 30px;">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2026 Samora Africa Safaris. All rights reserved. Adventure Beyond Expectations.</p>
+                        <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">&copy; 2026 Samora Africa Safaris. All rights reserved. Adventure Beyond Expectations.</p>
                     </div>
                     <div class="col-md-6 text-md-end mt-3 mt-md-0">
                         <a href="#" class="social-link me-3 text-decoration-none" style="color: #EBBF80;"><i class="fab fa-facebook fa-lg"></i></a>
@@ -396,80 +419,373 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-        // Safari Modal Population
-        const safariModal = document.getElementById('safariModal');
-        safariModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const title = button.getAttribute('data-title');
-            document.getElementById('modalTitle').textContent = title;
-            
-            // Populate itinerary
-            const itineraryHTML = `
-                <div class="accordion" id="itineraryAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#day1">
-                                Day 1: Arrival & Transfer
-                            </button>
-                        </h2>
-                        <div id="day1" class="accordion-collapse collapse show" data-bs-parent="#itineraryAccordion">
-                            <div class="accordion-body">
-                                <p>Upon arrival at the airport, our guide/driver will warmly receive you and transfer you to your reserved lodge. If time permits, enjoy a nature walk or city orientation. Overnight at your accommodation with dinner.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#day2">
-                                Day 2: Wildlife Exploration
-                            </button>
-                        </h2>
-                        <div id="day2" class="accordion-collapse collapse" data-bs-parent="#itineraryAccordion">
-                            <div class="accordion-body">
-                                <p>After breakfast, embark on game drives or primate tracking activities as per your itinerary. Enjoy stunning views of the landscape and encounter diverse wildlife species. Return to the lodge for relaxation and overnight stay.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#day3">
-                                Day 3+: Adventure & Return
-                            </button>
-                        </h2>
-                        <div id="day3" class="accordion-collapse collapse" data-bs-parent="#itineraryAccordion">
-                            <div class="accordion-body">
-                                <p>Continue with exciting activities including gorilla/chimpanzee trekking, boat cruises, nature walks, and cultural experiences. Final day includes transfer to the airport for your departure. Contact us for detailed day-by-day itinerary.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="mt-3 text-muted small"><em>Note: This is a sample overview. Contact us for the complete detailed itinerary tailored to your specific safari package.</em></p>
-            `;
-            document.getElementById('itineraryContent').innerHTML = itineraryHTML;
-        });
+        const safaris = [
+            {
+                id: 0,
+                title: "Uganda Wildlife, Gorilla & Chimpanzee Safari",
+                subtitle: "7 Days",
+                price: "From $1,200/person",
+                image: "images/photos/Elephant ishasha.jpg",
+                country: "uganda",
+                countryLabel: "Uganda",
+                packageCode: "SAS-UG-001",
+                duration: "7 Days / 6 Nights",
+                tourType: "Wildlife & Primates",
+                groupSize: "2-8 people",
+                overview: "A captivating blend of wildlife encounters in Uganda's iconic conservation areas. Meet mountain gorillas in Bwindi Impenetrable National Park, track chimpanzees in Kibale Forest, and enjoy game drives in Queen Elizabeth and Lake Mburo National Parks. This 7-day adventure takes you through some of Uganda's most breathtaking landscapes, from dense tropical rainforests to open savannah plains teeming with wildlife.",
+                included: [
+                    "Accommodation as per itinerary",
+                    "All meals (Breakfast, Lunch, Dinner)",
+                    "Park entrance fees",
+                    "Professional English-speaking guide",
+                    "4x4 Safari vehicle with pop-up roof",
+                    "Airport transfers",
+                    "Drinking water during drives"
+                ],
+                itinerary: [
+                    { day: 1, title: "Arrival in Entebbe & Transfer to Kibale", desc: "Upon arrival at Entebbe International Airport, our guide/driver will warmly receive you and brief you about the safari. Transfer to Fort Portal near Kibale Forest National Park (approximately 5-6 hours drive). Enjoy the scenic drive through lush green countryside, tea plantations, and local communities. Check in at your lodge, dinner and overnight." },
+                    { day: 2, title: "Chimpanzee Tracking in Kibale Forest", desc: "After an early breakfast, head to Kibale Forest National Park for the chimpanzee tracking briefing at 8:00 AM. Trek into the forest with experienced rangers to find and observe habituated chimpanzee communities. Spend an hour with these fascinating primates, observing their social behaviors. Afternoon optional nature walk or visit to Bigodi Wetland Sanctuary for birding. Dinner and overnight." },
+                    { day: 3, title: "Transfer to Queen Elizabeth National Park", desc: "After breakfast, drive south to Queen Elizabeth National Park. Afternoon game drive along the Kasenyi Plains, one of the park's prime wildlife viewing areas. Look out for elephants, buffalo, Uganda kob, waterbuck, and predators including lions and leopards. Dinner and overnight at your lodge." },
+                    { day: 4, title: "Kazinga Channel & Ishasha Sector", desc: "Morning game drive, then enjoy a 2-hour boat cruise along the Kazinga Channel. Spot hippos, crocodiles, elephants, and a spectacular array of waterbirds. After lunch, drive to the Ishasha sector famous for its tree-climbing lions that rest in fig trees. Evening game drive. Dinner and overnight." },
+                    { day: 5, title: "Transfer to Bwindi & Community Walk", desc: "After breakfast, transfer to Bwindi Impenetrable National Park. Afternoon cultural community walk to experience the Batwa pygmy trail and learn about local traditions. Prepare for the next day's gorilla tracking. Early dinner and overnight." },
+                    { day: 6, title: "Gorilla Tracking in Bwindi", desc: "Early breakfast, then report to the park headquarters for the gorilla tracking briefing at 7:30 AM. Trek into the impenetrable forest with experienced rangers and trackers to find a habituated gorilla family. The trek can take 2-8 hours depending on gorilla location. Spend a magical hour with the gorillas, observing their behaviors up close. Return to lodge, dinner and overnight." },
+                    { day: 7, title: "Lake Mburo & Departure", desc: "After breakfast, drive to Lake Mburo National Park for a morning game drive. Spot zebras, impalas, elands, and buffaloes. Optional boat ride on Lake Mburo. After lunch, transfer to Entebbe for your departure flight. End of safari." }
+                ],
+                accommodations: [
+                    { city: "Fort Portal", nights: 2, superior: "Primates Lodge Kibale", deluxe: "Kyaninga Lodge" },
+                    { city: "Queen Elizabeth NP", nights: 2, superior: "Mweya Safari Lodge", deluxe: "Mweya Safari Lodge" },
+                    { city: "Bwindi", nights: 2, superior: "Buhoma Lodge", deluxe: "Sanctuary Gorilla Forest Camp" }
+                ]
+            },
+            {
+                id: 1,
+                title: "Queen Elizabeth & Bwindi Adventure",
+                subtitle: "5 Days",
+                price: "Contact for pricing",
+                image: "images/photos/Hippos in water.jpg",
+                country: "uganda",
+                countryLabel: "Uganda",
+                packageCode: "SAS-UG-002",
+                duration: "5 Days / 4 Nights",
+                tourType: "Wildlife & Gorillas",
+                groupSize: "2-15 people",
+                overview: "Experience Uganda's most iconic parks on this 5-day adventure. Enjoy game drives on the Kasenyi Plains, boat cruises on the Kazinga Channel with massive hippo populations, and encounter tree-climbing lions in the Ishasha sector. This carefully curated safari combines the best wildlife viewing opportunities with the awe-inspiring experience of gorilla trekking in Bwindi.",
+                included: [
+                    "Accommodation as per itinerary",
+                    "All meals (Breakfast, Lunch, Dinner)",
+                    "Park entrance fees",
+                    "Professional English-speaking guide",
+                    "4x4 Safari vehicle with pop-up roof",
+                    "Kazinga Channel boat cruise",
+                    "Airport transfers"
+                ],
+                itinerary: [
+                    { day: 1, title: "Arrival & Transfer to Queen Elizabeth NP", desc: "Pick up from your hotel in Kampala/Entebbe and drive to Queen Elizabeth National Park via the scenic Equator crossing point. Stop for photos at the Equator. Continue to your lodge near the park. Evening relaxation and briefing. Dinner and overnight." },
+                    { day: 2, title: "Queen Elizabeth Game Drives & Boat Cruise", desc: "Early morning game drive on the Kasenyi Plains to spot lions, elephants, buffalo, and various antelope species. Return for lunch. Afternoon 2-hour boat cruise along the Kazinga Channel, a natural waterway connecting Lake Edward and Lake George. Witness large pods of hippos, Nile crocodiles, and over 60 species of birds. Dinner and overnight." },
+                    { day: 3, title: "Ishasha Tree-Climbing Lions", desc: "After breakfast, drive to the Ishasha sector in the southern part of Queen Elizabeth NP. This area is famous for its tree-climbing lions that drape over the branches of fig trees. Game drive searching for these unique lions along with other wildlife. Continue to Bwindi Impenetrable National Park. Check in, dinner and overnight." },
+                    { day: 4, title: "Gorilla Tracking in Bwindi", desc: "Early breakfast and report to park headquarters for the gorilla tracking briefing. Trek into the dense impenetrable forest with experienced rangers. The trek duration varies from 2-8 hours. Spend one hour with a habituated gorilla family, an experience of a lifetime. Return to your lodge for a celebratory dinner and overnight." },
+                    { day: 5, title: "Return to Kampala/Entebbe", desc: "After a leisurely breakfast, begin the scenic drive back to Kampala or Entebbe. Stop at roadside craft markets and enjoy the rolling hills landscape. Arrive in the evening. End of safari." }
+                ],
+                accommodations: [
+                    { city: "Queen Elizabeth NP", nights: 2, superior: "Enganzi Game Lodge", deluxe: "Mweya Safari Lodge" },
+                    { city: "Bwindi", nights: 2, superior: "Gorilla Safari Lodge", deluxe: "Sanctuary Gorilla Forest Camp" }
+                ]
+            },
+            {
+                id: 2,
+                title: "Magical Rwanda with Gorilla Tracking",
+                subtitle: "5 Days",
+                price: "From $1,500/person",
+                image: "images/photos/Gorilla.jpg",
+                country: "rwanda",
+                countryLabel: "Rwanda",
+                packageCode: "SAS-RW-001",
+                duration: "5 Days / 4 Nights",
+                tourType: "Culture & Primates",
+                groupSize: "2-8 people",
+                overview: "Explore the vibrant city of Kigali and traverse Rwanda's Northern, Western, and Southwestern provinces. Experience gorilla trekking in Volcanoes National Park, relax at Lake Kivu shores, and walk on the elevated canopy bridge in Nyungwe Forest. This 5-day tour offers a perfect combination of culture, history, and incredible wildlife encounters in the land of a thousand hills.",
+                included: [
+                    "Accommodation as per itinerary",
+                    "All meals (Breakfast, Lunch, Dinner)",
+                    "Park entrance fees",
+                    "Gorilla trekking permit",
+                    "Professional English-speaking guide",
+                    "4x4 Safari vehicle",
+                    "Airport transfers"
+                ],
+                itinerary: [
+                    { day: 1, title: "Arrival in Kigali & City Tour", desc: "Arrive at Kigali International Airport and meet your guide. Embark on a Kigali City Tour visiting the Kigali Genocide Memorial, local craft markets, and the vibrant Kimironko Market. Learn about Rwanda's remarkable recovery and transformation. Transfer to your hotel, dinner and overnight in Kigali." },
+                    { day: 2, title: "Transfer to Volcanoes NP & Cultural Visit", desc: "After breakfast, drive north to Musanze near Volcanoes National Park (approximately 2 hours). Afternoon visit to the Iby'Iwacu Cultural Village for traditional dances, storytelling, and hands-on cultural activities. Prepare for gorilla tracking the next day. Dinner and overnight." },
+                    { day: 3, title: "Gorilla Trekking in Volcanoes NP", desc: "Early morning briefing at park headquarters. Trek into the bamboo-covered slopes of the Virunga volcanoes to find a habituated gorilla family. The trek can take 1-6 hours depending on the gorilla family's location. Spend one unforgettable hour with the mountain gorillas. Afternoon optional golden monkey tracking. Dinner and overnight." },
+                    { day: 4, title: "Transfer to Nyungwe Forest", desc: "After breakfast, drive south to Nyungwe Forest National Park, one of Africa's oldest and most biodiverse rainforests. Afternoon canopy walkway experience, walking on a suspended bridge 70 meters above the forest floor with breathtaking views. Evening nature walk. Dinner and overnight." },
+                    { day: 5, title: "Nyungwe Exploration & Departure", desc: "Early morning chimpanzee tracking or forest walk in Nyungwe. After lunch, transfer to Kigali for your departure. Optional stop at Huye (Butare) for the National Museum. End of safari." }
+                ],
+                accommodations: [
+                    { city: "Kigali", nights: 1, superior: "Hotel des Mille Collines", deluxe: "Kigali Serena Hotel" },
+                    { city: "Musanze (Volcanoes)", nights: 2, superior: "Mountain Gorilla View Lodge", deluxe: "One&Only Gorilla's Nest" },
+                    { city: "Nyungwe", nights: 1, superior: "One&Only Nyungwe House", deluxe: "One&Only Nyungwe House" }
+                ]
+            },
+            {
+                id: 3,
+                title: "Wild Encounters & Adventure in Rwanda",
+                subtitle: "9 Days",
+                price: "From $2,000/person",
+                image: "images/photos/GIRAFFES MBURO.jpg",
+                country: "rwanda",
+                countryLabel: "Rwanda",
+                packageCode: "SAS-RW-002",
+                duration: "9 Days / 8 Nights",
+                tourType: "Adventure & Wildlife",
+                groupSize: "2-8 people",
+                overview: "An incredible 9-day adventure exploring Rwanda's rich cultural heritage and natural attractions. Wildlife viewing in Akagera National Park, chimpanzee tracking in Nyungwe Forest, gorilla trekking in Volcanoes National Park, and cultural experiences at Iby'Iwacu Village. This comprehensive tour covers all of Rwanda's major highlights.",
+                included: [
+                    "Accommodation as per itinerary",
+                    "All meals (Breakfast, Lunch, Dinner)",
+                    "Park entrance fees",
+                    "Gorilla trekking permit",
+                    "Professional English-speaking guide",
+                    "4x4 Safari vehicle",
+                    "Airport transfers",
+                    "Lake Kivu boat ride"
+                ],
+                itinerary: [
+                    { day: 1, title: "Arrival in Kigali", desc: "Arrive at Kigali International Airport, meet your guide, and transfer to your hotel. Afternoon Kigali City orientation tour. Dinner and overnight." },
+                    { day: 2, title: "Transfer to Akagera National Park", desc: "After breakfast, drive east to Akagera National Park (approximately 2.5 hours). Afternoon game drive exploring the park's savannah landscapes. Spot elephants, giraffes, zebras, hippos, crocodiles, and various antelope species. Dinner and overnight at the lodge." },
+                    { day: 3, title: "Full Day Akagera Safari", desc: "Full day of game drives in Akagera, covering both the southern and northern sectors. Morning boat ride on Lake Ihema to see hippos and waterbirds. Continue game drives looking for lions and the recently reintroduced rhinos. Dinner and overnight." },
+                    { day: 4, title: "Transfer to Nyungwe Forest", desc: "After breakfast, drive south across Rwanda to Nyungwe Forest National Park. Afternoon nature walk in this ancient montane rainforest, home to 13 primate species and 300+ bird species. Dinner and overnight." },
+                    { day: 5, title: "Chimpanzee Tracking & Canopy Walk", desc: "Early morning chimpanzee tracking through Nyungwe's trails. After finding and observing the chimps, return for lunch. Afternoon canopy walkway experience, walking 70m above the forest floor. Dinner and overnight." },
+                    { day: 6, title: "Lake Kivu Relaxation", desc: "Transfer to the scenic Lake Kivu shores at Gisenyi or Kibuye. Afternoon boat ride on the lake and relaxation at the beach. Enjoy fresh fish dinner by the lake. Overnight." },
+                    { day: 7, title: "Transfer to Volcanoes NP", desc: "After a relaxing morning, drive to Musanze near Volcanoes National Park. Afternoon visit to Iby'Iwacu Cultural Village for traditional performances and cultural exchange. Prepare for gorilla tracking. Dinner and overnight." },
+                    { day: 8, title: "Gorilla Trekking in Volcanoes NP", desc: "The highlight of your trip. Early morning briefing and trek into the volcanic forests to find mountain gorillas. Spend one magical hour with these gentle giants. Afternoon optional golden monkey tracking or Dian Fossey tomb hike. Farewell dinner and overnight." },
+                    { day: 9, title: "Departure", desc: "After breakfast, transfer to Kigali with stops at local markets and viewpoints. Visit the Kigali Genocide Memorial if not done on Day 1. Transfer to the airport for your departure. End of safari." }
+                ],
+                accommodations: [
+                    { city: "Kigali", nights: 1, superior: "Hotel des Mille Collines", deluxe: "Kigali Serena Hotel" },
+                    { city: "Akagera", nights: 2, superior: "Akagera Game Lodge", deluxe: "Magashi Camp" },
+                    { city: "Nyungwe", nights: 2, superior: "One&Only Nyungwe House", deluxe: "One&Only Nyungwe House" },
+                    { city: "Lake Kivu", nights: 1, superior: "Lake Kivu Serena Hotel", deluxe: "Lake Kivu Serena Hotel" },
+                    { city: "Musanze (Volcanoes)", nights: 2, superior: "Mountain Gorilla View Lodge", deluxe: "One&Only Gorilla's Nest" }
+                ]
+            },
+            {
+                id: 4,
+                title: "Uganda Luxury Safari Experience",
+                subtitle: "7 Days",
+                price: "From $2,500/person",
+                image: "images/photos/Buffalo.jpg",
+                country: "uganda",
+                countryLabel: "Uganda",
+                packageCode: "SAS-UG-003",
+                duration: "7 Days / 6 Nights",
+                tourType: "Luxury Safari",
+                groupSize: "2-6 people",
+                overview: "Premium accommodations with exclusive wildlife viewing opportunities and personalized service for the discerning traveler. Experience Murchison Falls and Queen Elizabeth National Parks in absolute comfort with private guides, luxury lodges, and curated game drives.",
+                included: [
+                    "Premium luxury accommodation",
+                    "All gourmet meals & beverages",
+                    "All park permits and entrance fees",
+                    "Private guide and driver",
+                    "Luxury 4x4 safari vehicle",
+                    "Domestic flights included",
+                    "Airport VIP transfers"
+                ],
+                itinerary: [
+                    { day: 1, title: "Arrival & Entebbe", desc: "Private VIP transfer from Entebbe airport to your luxury hotel. Welcome dinner and safari briefing. Rest and relax. Overnight at luxury hotel." },
+                    { day: 2, title: "Fly to Murchison Falls", desc: "Private charter flight to Murchison Falls National Park. Settle into your luxury lodge. Afternoon game drive with sundowner drinks. Dinner and overnight." },
+                    { day: 3, title: "Murchison Falls Activities", desc: "Early morning game drive. Mid-morning boat cruise to the base of the spectacular Murchison Falls. Private picnic lunch by the Nile. Afternoon game drive. Luxury dinner and overnight." },
+                    { day: 4, title: "Fly to Queen Elizabeth NP", desc: "Charter flight to Queen Elizabeth National Park. Check into your exclusive lodge. Afternoon private game drive on the Kasenyi Plains. Dinner and overnight." },
+                    { day: 5, title: "Exclusive Experiences", desc: "Morning crater lakes tour with a private guide. Afternoon private boat cruise on the Kazinga Channel. Spa treatment at the lodge. Dinner and overnight." },
+                    { day: 6, title: "Ishasha & Relaxation", desc: "Drive to Ishasha for tree-climbing lion viewing. Return to lodge. Afternoon at leisure with optional spa. Farewell dinner. Overnight." },
+                    { day: 7, title: "Departure", desc: "Charter flight back to Entebbe. VIP transfer to the airport for your international departure. End of safari." }
+                ],
+                accommodations: [
+                    { city: "Entebbe", nights: 1, superior: "-", deluxe: "The Boma Entebbe" },
+                    { city: "Murchison Falls", nights: 2, superior: "-", deluxe: "Chobe Safari Lodge" },
+                    { city: "Queen Elizabeth", nights: 3, superior: "-", deluxe: "Mweya Safari Lodge Suite" }
+                ]
+            },
+            {
+                id: 5,
+                title: "Combined Uganda & Rwanda",
+                subtitle: "10 Days",
+                price: "From $2,800/person",
+                image: "images/photos/Bwindi Forest.jpg",
+                country: "combined",
+                countryLabel: "Uganda & Rwanda",
+                packageCode: "SAS-COMBO-001",
+                duration: "10 Days / 9 Nights",
+                tourType: "Combined Adventure",
+                groupSize: "2-8 people",
+                overview: "The ultimate East African safari combining the best of Uganda and Rwanda. From the savannahs of Queen Elizabeth to the misty volcanoes of Rwanda, this 10-day journey covers gorilla trekking, wildlife game drives, boat cruises, cultural experiences, and the stunning Lake Kivu.",
+                included: [
+                    "Accommodation as per itinerary",
+                    "All meals (Breakfast, Lunch, Dinner)",
+                    "All park entrance fees",
+                    "Gorilla trekking permits (both countries)",
+                    "Professional guides in each country",
+                    "4x4 Safari vehicles",
+                    "Cross-border transfers",
+                    "Airport transfers"
+                ],
+                itinerary: [
+                    { day: 1, title: "Arrival in Entebbe", desc: "Arrive at Entebbe airport. Meet your guide and transfer to your hotel. Welcome dinner and safari orientation. Overnight in Entebbe." },
+                    { day: 2, title: "Queen Elizabeth National Park", desc: "Early departure to Queen Elizabeth NP. Afternoon game drive on the Kasenyi Plains. Spot lions, elephants, buffalo. Dinner and overnight at lodge." },
+                    { day: 3, title: "Kazinga Channel & Ishasha", desc: "Morning boat cruise on the Kazinga Channel. Afternoon drive to Ishasha for tree-climbing lions. Dinner and overnight." },
+                    { day: 4, title: "Bwindi Gorilla Tracking", desc: "Transfer to Bwindi. Early morning gorilla tracking briefing and trek. Spend one magical hour with mountain gorillas. Celebratory dinner. Overnight." },
+                    { day: 5, title: "Cross to Rwanda - Kigali", desc: "Drive across the border into Rwanda. Arrive in Kigali. Afternoon city tour including the Genocide Memorial. Dinner and overnight." },
+                    { day: 6, title: "Volcanoes National Park", desc: "Drive north to Musanze. Afternoon cultural visit to Iby'Iwacu Village. Prepare for gorilla tracking. Dinner and overnight." },
+                    { day: 7, title: "Rwanda Gorilla Trekking", desc: "Gorilla trekking in Volcanoes NP. Afternoon optional golden monkey tracking. Dinner and overnight." },
+                    { day: 8, title: "Nyungwe Forest", desc: "Drive south to Nyungwe Forest. Afternoon canopy walkway experience. Nature walk. Dinner and overnight." },
+                    { day: 9, title: "Lake Kivu", desc: "Transfer to Lake Kivu. Boat ride and relaxation. Fresh fish dinner by the lake. Overnight." },
+                    { day: 10, title: "Return to Kigali & Departure", desc: "Drive back to Kigali. Last-minute shopping. Transfer to airport for departure. End of safari." }
+                ],
+                accommodations: [
+                    { city: "Entebbe", nights: 1, superior: "Protea Hotel Entebbe", deluxe: "The Boma Entebbe" },
+                    { city: "Queen Elizabeth NP", nights: 2, superior: "Mweya Safari Lodge", deluxe: "Mweya Safari Lodge" },
+                    { city: "Bwindi", nights: 1, superior: "Buhoma Lodge", deluxe: "Sanctuary Gorilla Forest Camp" },
+                    { city: "Kigali", nights: 1, superior: "Hotel des Mille Collines", deluxe: "Kigali Serena Hotel" },
+                    { city: "Musanze (Volcanoes)", nights: 2, superior: "Mountain Gorilla View Lodge", deluxe: "One&Only Gorilla's Nest" },
+                    { city: "Nyungwe", nights: 1, superior: "One&Only Nyungwe House", deluxe: "One&Only Nyungwe House" },
+                    { city: "Lake Kivu", nights: 1, superior: "Lake Kivu Serena Hotel", deluxe: "Lake Kivu Serena Hotel" }
+                ]
+            }
+        ];
 
-        // Filter functionality
-        function filterSafaris(country) {
-            document.querySelectorAll('.safari-package').forEach(pkg => {
-                if (country === 'all' || pkg.getAttribute('data-country') === country) {
-                    pkg.style.display = 'block';
-                } else {
-                    pkg.style.display = 'none';
-                }
+        // Build listing cards
+        function buildGrid(filter) {
+            const grid = document.getElementById('safariGrid');
+            grid.innerHTML = '';
+            safaris.forEach((s, i) => {
+                if (filter && filter !== 'all' && s.country !== filter) return;
+                grid.innerHTML += `
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card safari-card shadow-sm" onclick="showSafariDetail(${i})">
+                            <img src="${s.image}" class="card-img-top" alt="${s.title}">
+                            <div class="card-body">
+                                <span class="badge mb-2" style="background:#EBBF80; color:#333;">${s.countryLabel}</span>
+                                <h5 class="card-title fw-bold">${s.title}</h5>
+                                <p class="text-muted small mb-1"><i class="fas fa-clock me-1"></i>${s.duration}</p>
+                                <p class="text-muted small mb-2"><i class="fas fa-users me-1"></i>${s.groupSize}</p>
+                                <p class="price-gold mb-3">${s.price}</p>
+                                <button class="view-details-btn w-100">View Details</button>
+                            </div>
+                        </div>
+                    </div>`;
             });
         }
 
-        document.getElementById('countryFilter').addEventListener('change', function() {
-            filterSafaris(this.value);
+        // Show detail view
+        function showSafariDetail(index) {
+            const s = safaris[index];
+            document.getElementById('listingView').style.display = 'none';
+            document.getElementById('detailView').style.display = 'block';
+
+            // Title & price
+            document.getElementById('safariTitle').innerHTML = `
+                <h2 class="fw-bold" style="color: #B8860B;">${s.title} - ${s.subtitle}</h2>
+                <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-1" style="color:#B8860B;"></i>${s.countryLabel} &nbsp; <i class="fas fa-clock me-1" style="color:#B8860B;"></i>${s.duration} &nbsp; <i class="fas fa-users me-1" style="color:#B8860B;"></i>${s.groupSize}</p>
+                <p class="fs-5 fw-bold" style="color: #B8860B;">${s.price}</p>`;
+
+            // Hero image
+            document.getElementById('mainImage').innerHTML = `<img src="${s.image}" alt="${s.title}">`;
+
+            // Package details
+            document.getElementById('packageDetails').innerHTML = `
+                <div class="detail-item"><label>Package Code</label><p>${s.packageCode}</p></div>
+                <div class="detail-item"><label>Country</label><p>${s.countryLabel}</p></div>
+                <div class="detail-item"><label>Duration</label><p>${s.duration}</p></div>
+                <div class="detail-item"><label>Tour Type</label><p>${s.tourType}</p></div>
+                <div class="detail-item"><label>Group Size</label><p>${s.groupSize}</p></div>
+                <div class="detail-item"><label>Price</label><p>${s.price}</p></div>`;
+
+            // Overview
+            document.getElementById('overviewText').textContent = s.overview;
+            document.getElementById('includedList').innerHTML = s.included.map(item => `<li>${item}</li>`).join('');
+
+            // Itinerary
+            document.getElementById('itineraryContent').innerHTML = s.itinerary.map(day => `
+                <div class="itinerary-day">
+                    <div class="itinerary-day-header">Day ${day.day}: ${day.title}</div>
+                    <div class="itinerary-day-body"><p class="mb-0">${day.desc}</p></div>
+                </div>`).join('');
+
+            // Accommodations
+            document.getElementById('accommodationsTable').innerHTML = s.accommodations.map(a => `
+                <tr><td class="fw-bold">${a.city}</td><td>${a.nights}</td><td>${a.superior}</td><td>${a.deluxe}</td></tr>`).join('');
+
+            // Similar listings
+            document.getElementById('similarListings').innerHTML = safaris
+                .filter((_, i2) => i2 !== index)
+                .slice(0, 3)
+                .map(sim => `
+                    <a href="#" onclick="showSafariDetail(${sim.id}); return false;" class="text-decoration-none d-flex align-items-start mb-3 similar-item">
+                        <img src="${sim.image}" class="rounded me-3" style="width: 70px; height: 55px; object-fit: cover;" alt="${sim.title}">
+                        <div>
+                            <h6 class="fw-bold mb-1 text-dark" style="font-size: 0.85rem;">${sim.title}</h6>
+                            <small style="color: #B8860B;" class="fw-bold">${sim.price}</small>
+                        </div>
+                    </a>`).join('');
+
+            // Reset to overview tab
+            switchTab('overview', document.querySelector('.tabs-nav button'));
+            window.scrollTo(0, 0);
+
+            // Update URL without reload
+            history.pushState({ detail: index }, '', `safaris.html?id=${index}`);
+        }
+
+        function backToListing() {
+            document.getElementById('detailView').style.display = 'none';
+            document.getElementById('listingView').style.display = 'block';
+            history.pushState({}, '', 'safaris.html');
+            window.scrollTo(0, 0);
+        }
+
+        function switchTab(tabName, btn) {
+            document.querySelectorAll('.detail-page').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            document.querySelectorAll('.tabs-nav button').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+
+        // Star rating
+        document.querySelectorAll('#starRating i').forEach(star => {
+            star.addEventListener('click', function() {
+                const r = this.dataset.r;
+                document.querySelectorAll('#starRating i').forEach(s => {
+                    s.className = parseInt(s.dataset.r) <= r ? 'fas fa-star active' : 'far fa-star';
+                });
+            });
         });
 
-        // Apply filter from URL parameter on page load
+        function submitReview(e) {
+            e.preventDefault();
+            alert('Thank you for your review! It will be published after moderation.');
+            e.target.reset();
+            document.querySelectorAll('#starRating i').forEach(s => s.className = 'far fa-star');
+        }
+
+        // Handle back button
+        window.addEventListener('popstate', function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('id')) {
+                showSafariDetail(parseInt(params.get('id')));
+            } else {
+                backToListing();
+            }
+        });
+
+        // Init on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const country = urlParams.get('country');
-            if (country && ['uganda', 'rwanda', 'combined'].includes(country)) {
-                document.getElementById('countryFilter').value = country;
-                filterSafaris(country);
+            const params = new URLSearchParams(window.location.search);
+            const country = params.get('country');
+            const id = params.get('id');
+
+            buildGrid(country || 'all');
+
+            if (id !== null) {
+                showSafariDetail(parseInt(id));
             }
         });
     </script>
