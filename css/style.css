@@ -301,6 +301,39 @@ footer .text-warning {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Price Per Person Table */
+.price-per-person-table {
+    border-collapse: collapse;
+}
+
+.price-per-person-table th {
+    background: #f5ead5;
+    color: #5a3e00;
+    font-weight: 600;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border: 1px solid #e8d5b0;
+}
+
+.price-per-person-table td {
+    padding: 10px 16px;
+    color: #333;
+    font-size: 0.95rem;
+    border: 1px solid #e8d5b0;
+}
+
+/* Includes / Excludes Lists */
+.includes-excludes-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.includes-excludes-list li:last-child {
+    border-bottom: none;
+}
+
 /* Accordion */
 .accordion-button:not(.collapsed) {
     background-color: #e8f5e9;
