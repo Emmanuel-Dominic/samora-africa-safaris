@@ -215,16 +215,16 @@
 
                     <!-- Tab Navigation -->
                     <div class="tabs-nav mb-4">
-                        <button class="active" onclick="switchTab('overview', this)">OVERVIEW</button>
-                        <button onclick="switchTab('itinerary', this)">ITINERARY</button>
-                        <button onclick="switchTab('prices', this)">PRICES AND INCLUSIONS</button>
-                        <button onclick="switchTab('accommodations', this)">ACCOMMODATIONS</button>
+                        <button class="active" onclick="switchTab('overview', this)">Overview</button>
+                        <button onclick="switchTab('itinerary', this)">Itinerary</button>
+                        <button onclick="switchTab('prices', this)">Prices and Inclusions</button>
+                        <button onclick="switchTab('accommodations', this)">Accomodations</button>
                     </div>
 
                     <!-- OVERVIEW Tab -->
                     <div id="overview" class="detail-page active">
-                        <div class="package-details" id="packageDetails"></div>
-                        <hr>
+                        <!-- <div class="package-details" id="packageDetails"></div>
+                        <hr> -->
                         <h5 class="fw-bold mb-3">Overview</h5>
                         <p id="overviewText" class="text-muted" style="line-height: 1.8;"></p>
 
@@ -238,11 +238,9 @@
 
                     <!-- PRICES AND INCLUSIONS Tab -->
                     <div id="prices" class="detail-page">
-                        <h5 class="fw-bold mb-4">Prices and Inclusions</h5>
-
                         <!-- Price Per Person Table -->
                         <div class="mb-4 p-4" style="background: #fdf8ef; border-radius: 8px; border: 1px solid #f0e0c0;">
-                            <h6 class="fw-bold mb-3 text-uppercase" style="color: #333;">Price Per Person</h6>
+                            <h6 class="fw-bold mb-3 text-uppercase text-center" style="color: #333;">Price Per Person</h6>
                             <p id="priceDisplay" class="fs-5 fw-bold" style="color: #B8860B; display: none;"></p>
                             <div class="table-responsive">
                                 <table id="pricePerPersonTable" class="table table-bordered text-center mb-0 price-per-person-table">
@@ -271,10 +269,10 @@
                         <table class="accommodation-table">
                             <thead>
                                 <tr>
-                                    <th>City</th>
-                                    <th># of Nights</th>
-                                    <th>Superior</th>
-                                    <th>Deluxe</th>
+                                    <th>Destinations</th>
+                                    <th>Nights</th>
+                                    <th>Lodge/Hotel</th>
+                                    <th>Comfort</th>
                                 </tr>
                             </thead>
                             <tbody id="accommodationsTable"></tbody>
@@ -376,31 +374,33 @@
             {
                 id: 0,
                 title: "4 day Uganda gorilla adventure and wildlife expedition",
-                subtitle: "4 Days",
-                price: "Contact for pricing",
+                subtitle: "",
+                price: "$2370 per Person (02 Travelers)" || "Contact for pricing",
                 image: "images/photos/Gorilla.jpg",
                 country: "uganda",
                 countryLabel: "Uganda",
                 duration: "4 Days / 3 Nights",
                 tourType: "Wildlife & Gorillas",
-                groupSize: "2-8 people",
-                overview: "This four-day short safari tour takes you to the west and southwest of Uganda to fully engage in the exhilarating experience of wildlife viewing and trekking mountain gorillas in the dense forest of Bwindi Impenetrable National Park. It\'s ideal for adventurers visiting any African country and desire to see mountain gorillas. Additionally, it perfectly suits anyone attending international conferences, workshops, or business trips to Uganda, Rwanda, Kenya, and Tanzania. Besides tracking mountain gorillas, this tour also includes visiting Lake Mburo National Park for wildlife viewing experiences. Given the park\'s strategic location along the main highway connecting Kampala with Western and Southwestern Uganda, it is ideal for a detour to explore wildlife before proceeding to Bwindi Impenetrable National Park. Despite being the smallest savannah park in Uganda, Lake Mburo National Park is home to 350 avian species and a wide variety of wildlife, including buffaloes, zebras, hippos, antelopes (reedbucks, elands, topis, Defassa waterbucks, and impalas), and relocated giraffes. Additionally, the tour involves lengthy travel to and from Bwindi, traversing several regions that have incredibly beautiful scenery.",
+                groupSize: "1-6 people",
+                overview: "<p>This four-day short safari tour takes you to the west and southwest of Uganda to fully engage in the exhilarating experience of wildlife viewing and trekking mountain gorillas in the dense forest of Bwindi Impenetrable National Park. It\'s ideal for adventurers visiting any African country and desire to see mountain gorillas.</p><p>Additionally, it perfectly suits anyone attending international conferences, workshops, or business trips to Uganda, Rwanda, Kenya, and Tanzania.</p><p>Besides tracking mountain gorillas, this tour also includes visiting Lake Mburo National Park for wildlife viewing experiences. Given the park\'s strategic location along the main highway connecting Kampala with Western and Southwestern Uganda, it is ideal for a detour to explore wildlife before proceeding to Bwindi Impenetrable National Park. Despite being the smallest savannah park in Uganda, Lake Mburo National Park is home to 350 avian species and a wide variety of wildlife, including buffaloes, zebras, hippos, antelopes (reedbucks, elands, topis, Defassa waterbucks, and impalas), and relocated giraffes.</p><p>Further, the tour involves lengthy travel to and from Bwindi, traversing several regions that have incredibly beautiful scenery.</p><hr><h5 class='fw-bold text-success-dark'>Safari Highlights</h5><ul><li>Experience the thrill of trekking endangered mountain gorillas through Bwindi's dense forest.</li><li>Conduct a walking safari in Lake Mburo National Park to have a close encounter with the animals.</li><li>Enjoy scenic views of the landscape along the route to and from Bwindi.</li></ul>",
                 included: ["Gorilla tracking permit at 800 USD per person", "Accommodation for 3 nights as indicated in the itinerary", "Road transport using 4 X 4 Toyota Hiace Safari Van", "Services of the English speaking guide/driver", "All meals as stipulated during the safari period", "Entrance fees to all the parks indicated in the itinerary", "Bottled water in the safari vehicle", "Walking safari in Lake Mburo National Park", "Airport transfers"],
                 excluded: ["International travel to/from Entebbe", "Personal/travel insurance", "Entry Visa fees into Uganda", "Domestic flights (if required)", "Payment charges (when using online payment methods)", "Tips (gratuity) to guides (recommended)", "Any activity indicated as optional"],
-                pricePerPerson: [{pax: 1, price: "USD 2,180"}, {pax: 2, price: "USD 1,540"}, {pax: 3, price: "USD 1,380"}, {pax: 4, price: "USD 1,280"}, {pax: 5, price: "USD 1,210"}, {pax: 6, price: "USD 1,150"}],
+                pricePerPerson: [{pax: 1, price: "USD 3,040"}, {pax: 2, price: "USD 2,370"}, {pax: 3, price: "USD 2,120"}, {pax: 4, price: "USD 2,020"}, {pax: 5, price: "USD 1,950"}, {pax: 6, price: "USD 1,890"}],
                 itinerary: [
-                    { day: 1, title: "Travel to Lake Mburo National Park", desc: "The company guide will pick you up from Entebbe or Kampala early in the morning and take you on a 5-hour drive to Lake Mburo National Park. You will have a stopover at the Equator monument in Kayabwe to take photos and enjoy experiments that illustrate how the gravitational pull at the Equator varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the Equator line. You will embark on a walking safari adventure through the park upon arrival. Lake Mburo National Park is the only protected area in Uganda that offers a guided walking safari. During the 3-hour nature walk, you will encounter several animals and bird species. On the walking safari, you can see antelopes (impalas, waterbucks, topis, elands, oribis, and bushbucks), giraffes, zebras, buffaloes, warthogs, and other animals up close. Following a successful walking safari, you will return to the lodge for your relaxation and overnight stay. You will have your accommodation at Eagles Nest Lodge .Day 2: Game drive & travel to Bwindi Impenetrable National Park. After breakfast, you will take a final drive through the park to encounter more animals before heading to Bwindi Impenetrable National Park. As you drive through the park, you might see a wide variety of animals, including zebras, warthogs, buffaloes, and many species of antelope, such as impalas, topis, and elands. As you travel, you will make a few stopovers at roadside markets to taste the organic fruits grown in Uganda, observe and learn about the daily activities of various communities, and engage with the locals. Upon arrival, you will have a relaxing evening at the reserved accommodation near the Bwindi forest. Your overnight stay will be at Gorilla Valley Lodge" },
+                    { day: 1, title: "Travel to Lake Mburo National Park", desc: "<p>The company guide will pick you up from Entebbe or Kampala early in the morning and take you on a 5-hour drive to Lake Mburo National Park. You will have a stopover at the Equator monument in Kayabwe to take photos and enjoy experiments that illustrate how the gravitational pull at the Equator varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the Equator line.</p><p>You will embark on a walking safari adventure through the park upon arrival. Lake Mburo National Park is the only protected area in Uganda that offers a guided walking safari. During the 3-hour nature walk, you will encounter several animals and bird species. On the walking safari, you can see antelopes (impalas, waterbucks, topis, elands, oribis, and bushbucks), giraffes, zebras, buffaloes, warthogs, and other animals up close.</p><p>Following a successful walking safari, you will return to the lodge for your relaxation and overnight stay.</p><p>You will have your accommodation at <strong>Eagles Nest Lodge</strong>" },
+                    { day: 2, title: "Game drive & travel to Bwindi Impenetrable National Park.", desc: "<p>After breakfast, you will take a final drive through the park to encounter more animals before heading to Bwindi Impenetrable National Park. As you drive through the park, you might see a wide variety of animals, including zebras, warthogs, buffaloes, and many species of antelope, such as impalas, topis, and elands.</p><p>As you travel, you will make a few stopovers at roadside markets to taste the organic fruits grown in Uganda, observe and learn about the daily activities of various communities, and engage with the locals.</p><p>Upon arrival, you will have a relaxing evening at the reserved accommodation near the Bwindi forest.</p><p>Your overnight stay will be at <strong>Gorilla Valley Lodge</strong></p>" },
                     { day: 3, title: "Gorilla trekking in Bwindi Impenetrable National Park", desc: "Following an early breakfast, you will shortly drive to the collection center for the briefing exercise that begins at 8:00 a.m. The experienced park rangers conduct the briefing sessions with the express intent of providing the tracking participants with trekking guidelines and procedures. Following the briefing exercise, a specific habituated gorilla family will be assigned to you, with the other 7 participants, to embark on an exciting trekking expedition through steep and heavily forested slopes until you eventually locate the gorillas within the dense forest. Once you find the gorillas, you will have one hour to spend with them, during which time you can take photos and watch them go about their daily lives. After the gorilla trekking experience, you will return to the lodge for relaxation and an overnight stay." },
                     { day: 4, title: "Travel to Entebbe or Kampala", desc: "Following an early breakfast, you will embark on a 10-hour road trip to Entebbe Airport or Kampala. The journey is lengthy, but the amazing landscape along the route will captivate you and make the travel less tiring and more enjoyable." }
                 ],
                 accommodations: [
-                    { city: "Lake Mburo National Park", nights: 1, superior: "Eagles Nest Lodge", deluxe: "Eagles Nest Lodge" }
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Eagles Nest Lodge", comfort: "Standard" },
+                    { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorila Valley Lodge", comfort: "Mid-Range" }
                 ]
             },
             {
                 id: 1,
                 title: "6-Day Uganda Adventure Safari: Gorilla Trekking, Wildlife & White-Water Rafting",
-                subtitle: "6 Days",
+                subtitle: "",
                 price: "Contact for pricing",
                 image: "images/photos/BuzBi-60.jpg",
                 country: "uganda",
@@ -411,7 +411,7 @@
                 overview: "",
                 included: ["Gorilla tracking permit", "Accommodation for 5 nights", "Road transport", "Services of an English speaking guide/driver", "Water rafting on River Nile", "Meals as indicated during the safari duration", "Bottled water in the safari vehicle", "Park entrance fees", "Airport transfers"],
                 excluded: ["International travel to/from Entebbe", "Personal/travel insurance", "Entry Visa fees into Uganda", "Domestic flights (if required)", "Payment charges (when using online payment methods)", "Tips (gratuity) to guides (recommended)", "Any activity indicated as optional", "Activities not mentioned in the itinerary", "All kinds of drinks apart from water", "Lion experiential tracking in Queen Elizabeth National Park if opted for"],
-                pricePerPerson: [{pax: 1, price: "USD 3,050"}, {pax: 2, price: "USD 2,180"}, {pax: 3, price: "USD 1,950"}, {pax: 4, price: "USD 1,820"}, {pax: 5, price: "USD 1,720"}, {pax: 6, price: "USD 1,640"}],
+                pricePerPerson: [{pax: 1, price: "USD 3,970"}, {pax: 2, price: "USD 3,030"}, {pax: 3, price: "USD 2,760"}, {pax: 4, price: "USD 2,590"}, {pax: 5, price: "USD 2,555"}, {pax: 6, price: "USD 2,480"}],
                 itinerary: [
                     { day: 1, title: "Arrival and transfer to the lodge", desc: "A company staff member or guide will warmly welcome you when you arrive at Entebbe Airport after completing the immigration process. The guide will drive you to your reserved accommodation in or around Entebbe town. Accommodation at Airport Link Guest House in Entebbe" },
                     { day: 2, title: "White water rafting on River Nile", desc: "Early in the morning, you will embark on a 2-3 hour drive to Kayunga, where you will enjoy a thrilling rafting experience along the River Nile. You will participate in the captivating rafting excursion on the iconic River Nile for about 05 hours. Whether you’re a skilled rafter or not, expect an exciting experience from the river’s rapids and falls, which offer various challenging options from grade 3 to grade 5. Following the thrilling rafting experience on the Nile River, you will spend the rest of the evening relaxing at the lodge. Overnight stay at The Haven Lodge" },
@@ -421,8 +421,8 @@
                     { day: 6, title: "Drive to Entebbe airport for your departure flight", desc: "Early morning, you will embark on a long journey of 9-10 hours to Entebbe Airport for your departure flight. The journey is lengthy, but the amazing landscape along the route will captivate you and make the travel less tiring and more enjoyable. END Tour price includes Gorilla tracking permit Accommodation for 5 nights Road transport Services of an English speaking guide/driver Water rafting on River Nile Meals as indicated during the safari duration Bottled water in the safari vehicle Park entrance fees Airport transfers" }
                 ],
                 accommodations: [
-                    { city: "the lodge", nights: 1, superior: "Airport Link Guest House in Entebbe", deluxe: "Airport Link Guest House in Entebbe" },
-                    { city: "White water rafting on River Nile", nights: 1, superior: "The Haven Lodge", deluxe: "The Haven Lodge" }
+                    { destination: "the lodge", nights: 1, hotel: "Airport Link Guest House in Entebbe", comfort: "Airport Link Guest House in Entebbe" },
+                    { destination: "White water rafting on River Nile", nights: 1, hotel: "The Haven Lodge", comfort: "The Haven Lodge" }
                 ]
             },
             {
@@ -450,7 +450,7 @@
                     { day: 7, title: "Game drive and transfer to Entebbe Airport.", desc: "After breakfast, you will enjoy a last drive through the park to spot more animals before heading to the Entebbe airport for your departure flight. As you drive through the park, you might be able to encounter a wide variety of animals, including zebras, warthogs, buffaloes, and many species of antelopes such as impalas, topis, and elands. You will have a stopover at the Equator monument in Kayabwe for lunch to take photos and enjoy the amazing experiments that demonstrate how the gravitational pull at the Equator varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the equator." }
                 ],
                 accommodations: [
-                    { city: "Lake Mburo National Park", nights: 1, superior: "Mpogo Safari Lodge", deluxe: "Mpogo Safari Lodge" }
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mpogo Safari Lodge" }
                 ]
             },
             {
@@ -478,11 +478,11 @@
                     { day: 7, title: "Drive to Entebbe Airport for your departure flight.", desc: "After six days of cherished moments and intimate connection, you will embark on a scenic three-hour drive to Entebbe Airport for your departure flight. To ensure a smooth and stress-free transfer, we recommend booking an evening flight to allow ample time for a relaxed journey and final reflections on your unforgettable experience. END" }
                 ],
                 accommodations: [
-                    { city: "the hotel/lodge", nights: 1, superior: "Protea Hotel", deluxe: "Protea Hotel" },
-                    { city: "Lake Mburo National Park", nights: 1, superior: "Kigambira Safari Lodge", deluxe: "Kigambira Safari Lodge" },
-                    { city: "Horse-back riding", nights: 1, superior: "Kigambira Safari Lodge", deluxe: "Kigambira Safari Lodge" },
-                    { city: "Kalagala Island- Kangulumira", nights: 1, superior: "Wildwaters Lodge", deluxe: "Wildwaters Lodge" },
-                    { city: "Wildwaters Spa", nights: 1, superior: "Wildwaters Lodge", deluxe: "Wildwaters Lodge" }
+                    { destination: "the hotel/lodge", nights: 1, hotel: "Protea Hotel", comfort: "Protea Hotel" },
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Kigambira Safari Lodge", comfort: "Kigambira Safari Lodge" },
+                    { destination: "Horse-back riding", nights: 1, hotel: "Kigambira Safari Lodge", comfort: "Kigambira Safari Lodge" },
+                    { destination: "Kalagala Island- Kangulumira", nights: 1, hotel: "Wildwaters Lodge", comfort: "Wildwaters Lodge" },
+                    { destination: "Wildwaters Spa", nights: 1, hotel: "Wildwaters Lodge", comfort: "Wildwaters Lodge" }
                 ]
             },
             {
@@ -512,8 +512,8 @@
                     { day: 9, title: "Drive to Entebbe Airport for your departure flight.", desc: "Following an overnight stay at the comfortable and eco-friendly Haven Lodge, you will drive (about three hours) to the Entebbe airport in preparation for your departure flight. We recommend booking an evening flight to ensure a seamless transition without stress or haste. END" }
                 ],
                 accommodations: [
-                    { city: "the top of the falls", nights: 1, superior: "Fort Murchison", deluxe: "Fort Murchison" },
-                    { city: "Entebbe Airport for your departure flight.", nights: 1, superior: "the comfortable and eco-friendly Haven Lodge, you will drive (about three hours) to the Entebbe airport in preparation for your departure flight", deluxe: "the comfortable and eco-friendly Haven Lodge, you will drive (about three hours) to the Entebbe airport in preparation for your departure flight" }
+                    { destination: "the top of the falls", nights: 1, hotel: "Fort Murchison", comfort: "Fort Murchison" },
+                    { destination: "Entebbe Airport for your departure flight.", nights: 1, hotel: "the comfortable and eco-friendly Haven Lodge, you will drive (about three hours) to the Entebbe airport in preparation for your departure flight", comfort: "the comfortable and eco-friendly Haven Lodge, you will drive (about three hours) to the Entebbe airport in preparation for your departure flight" }
                 ]
             },
             {
@@ -543,10 +543,10 @@
                     { day: 10, title: "Transfer to Entebbe airport with enroute tracking of rhinos at Ziwa Sanctuary", desc: "Your day begins with an early morning departure from Murchison Falls National Park to Ziwa Rhino Sanctuary in the Nakasongola district, central Uganda. Upon arrival, you\'ll embark on a thrilling 1-2 hour walking safari to track white rhinos in their natural habitat. The sanctuary protects over 30 magnificent endangered creatures, with other wildlife species and more than 300 bird species. Following your rhino tracking experience, you will enjoy lunch and conclude your wildlife viewing experience in Uganda by embarking on the 3-4 hour drive to Entebbe Airport for your departure flight. Note: For optimal travel convenience and to manage unforeseen delays, we advise scheduling your departing flight from Entebbe International Airport between 9:00 PM and 10:00 PM. This carefully selected timeframe provides a comfortable buffer that ensures a smooth conclusion of your safari. END" }
                 ],
                 accommodations: [
-                    { city: "Lake Mburo National Park", nights: 1, superior: "Rwakobo Rock", deluxe: "Rwakobo Rock" },
-                    { city: "Bwindi Impenetrable National Park", nights: 1, superior: "Gorilla Valley Lodge", deluxe: "Gorilla Valley Lodge" },
-                    { city: "Queen Elizabeth National Park", nights: 1, superior: "The Bush Lodge", deluxe: "The Bush Lodge" },
-                    { city: "Exploration of Murchison Falls National Park", nights: 1, superior: "Pakuba Safari Lodge", deluxe: "Pakuba Safari Lodge" }
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Rwakobo Rock", comfort: "Rwakobo Rock" },
+                    { destination: "Bwindi Impenetrable National Park", nights: 1, hotel: "Gorilla Valley Lodge", comfort: "Gorilla Valley Lodge" },
+                    { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "The Bush Lodge" },
+                    { destination: "Exploration of Murchison Falls National Park", nights: 1, hotel: "Pakuba Safari Lodge", comfort: "Pakuba Safari Lodge" }
                 ]
             },
             {
@@ -578,9 +578,9 @@
                     { day: 11, title: "Visit the Bahima Homestead and travel to Entebbe airport for your departure flight", desc: "In the morning, you will socially interact with the Bahima (pastoralists) and actively participate in herding Ankole cows (long-horned cattle). Participating in Ankole cow herding gives you a hands-on opportunity to learn about cattle management, a tradition passed down through generations. Under the guidance of experienced local herders, you will learn the various methods of herding and guiding the cows. Following your enriching interaction with the Bahima community, you\'ll begin your journey to Entebbe Airport for your departure. En route, we\'ll make a brief stop at the Kayabwe Equator Monument, where you can capture memorable photos straddling this significant geographical line and witness fascinating demonstrations of equatorial phenomena. The experiments show how water swirls in opposite directions on either side of the equator line. While these entertaining demonstrations aren\'t scientifically proven, they provide a delightful and educational insight into the unique properties of our planet\'s equatorial region." }
                 ],
                 accommodations: [
-                    { city: "the hotel/lodge", nights: 1, superior: "Airport Link Guest House", deluxe: "Airport Link Guest House" },
-                    { city: "Kidepo Valley National Park", nights: 1, superior: "Kidepo Savannah Lodge", deluxe: "Kidepo Savannah Lodge" },
-                    { city: "Explore Kidepo Valley National Park", nights: 1, superior: "Kidepo Savannah Lodge", deluxe: "Kidepo Savannah Lodge" }
+                    { destination: "the hotel/lodge", nights: 1, hotel: "Airport Link Guest House", comfort: "Airport Link Guest House" },
+                    { destination: "Kidepo Valley National Park", nights: 1, hotel: "Kidepo Savannah Lodge", comfort: "Kidepo Savannah Lodge" },
+                    { destination: "Explore Kidepo Valley National Park", nights: 1, hotel: "Kidepo Savannah Lodge", comfort: "Kidepo Savannah Lodge" }
                 ]
             },
             {
@@ -611,9 +611,9 @@
                     { day: 11, title: "Transfer to Entebbe airport for departure flight", desc: "Your extraordinary 11-day Uganda safari adventure concludes today with your transfer to Entebbe Airport for your departure flight. We are confident that during the transfer to the airport, you will be reflecting on the incredible experiences you had during your safari." }
                 ],
                 accommodations: [
-                    { city: "Murchison Falls National Park", nights: 1, superior: "Fort Murchison Drive Time from Entebbe to Murchison Falls National Park is about 6 hours", deluxe: "Fort Murchison Drive Time from Entebbe to Murchison Falls National Park is about 6 hours" },
-                    { city: "Queen Elizabeth National Park for a boat trip on Kazinga channel", nights: 1, superior: "The Bush Lodge", deluxe: "The Bush Lodge" },
-                    { city: "Bwindi Impenetrable National Park", nights: 1, superior: "Rushaga Gorilla Lodge 8: Gorilla Trekking in Bwindi Forest National Park After an early breakfast, you will take a short drive to the briefing center in time for the 8:00 a", deluxe: "Rushaga Gorilla Lodge 8: Gorilla Trekking in Bwindi Forest National Park After an early breakfast, you will take a short drive to the briefing center in time for the 8:00 a" }
+                    { destination: "Murchison Falls National Park", nights: 1, hotel: "Fort Murchison Drive Time from Entebbe to Murchison Falls National Park is about 6 hours", comfort: "Fort Murchison Drive Time from Entebbe to Murchison Falls National Park is about 6 hours" },
+                    { destination: "Queen Elizabeth National Park for a boat trip on Kazinga channel", nights: 1, hotel: "The Bush Lodge", comfort: "The Bush Lodge" },
+                    { destination: "Bwindi Impenetrable National Park", nights: 1, hotel: "Rushaga Gorilla Lodge 8: Gorilla Trekking in Bwindi Forest National Park After an early breakfast, you will take a short drive to the briefing center in time for the 8:00 a", comfort: "Rushaga Gorilla Lodge 8: Gorilla Trekking in Bwindi Forest National Park After an early breakfast, you will take a short drive to the briefing center in time for the 8:00 a" }
                 ]
             },
             {
@@ -647,8 +647,8 @@
                     { day: 13, title: "Transfer to Entebbe Airport for your departure flight", desc: "You will begin your road trip of 9-10 hours to Entebbe airport following an early breakfast. The journey is lengthy, but the amazing landscape along the route will captivate you and make the travel less tiring and more enjoyable. You will have a stopover at the Equator monument in Kayabwe to take photos and enjoy the breathtaking experiments that demonstrate how the gravitational pull at the Equator varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the equator line. NOTE: The Rwenzori Mountains provide various hiking options tailored to different fitness levels, allowing trekkers to choose according to their abilities. For those who can\'t climb Margherita, other peaks are available. Kindly inform us so we can customize your Rwenzori Hiking to suit your preferences and fitness level." }
                 ],
                 accommodations: [
-                    { city: "Kasese town", nights: 1, superior: "Ngabu Hotel", deluxe: "Ngabu Hotel" },
-                    { city: "Queen Elizabeth National Park.", nights: 1, superior: "The Bush Lodge", deluxe: "The Bush Lodge" }
+                    { destination: "Kasese town", nights: 1, hotel: "Ngabu Hotel", comfort: "Ngabu Hotel" },
+                    { destination: "Queen Elizabeth National Park.", nights: 1, hotel: "The Bush Lodge", comfort: "The Bush Lodge" }
                 ]
             },
             {
@@ -683,13 +683,13 @@
                     { day: 14, title: "Visit the Bahima Homestead and travel to Entebbe airport for your departure flight", desc: "In the morning, you will socially interact with the Bahima (pastoralists) and actively participate in herding the Ankole cows (long-horned cattle). Participating in Ankole cow herding gives you a hands-on opportunity to learn about cattle management, a tradition passed down through generations. Under the guidance of experienced local herders, you will learn the various methods of leading and guiding the cows. After completing your visit to the Bahima homestead, you will proceed to Entebbe Airport for your departure flight. Along the way, you will have a brief stopover at the Equator monument in Kayabwe to take photos and enjoy the extraordinary experiments that illustrate how the gravitational pull at the Equator line varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the equator. Though not scientifically proven, these experiments will offer an entertaining and instructive experience while learning about the geographical importance of the equator line." }
                 ],
                 accommodations: [
-                    { city: "the hotel/lodge", nights: 1, superior: "Airport Link Guest House", deluxe: "Airport Link Guest House" },
-                    { city: "Eastern Uganda-Kapchorwa", nights: 1, superior: "Sipi River Lodge", deluxe: "Sipi River Lodge" },
-                    { city: "for a cultural interaction with the Karamojong", nights: 1, superior: "Kara-Tunga or Hotel Africana Moroto", deluxe: "Kara-Tunga or Hotel Africana Moroto" },
-                    { city: "Kidepo Valley National Park", nights: 1, superior: "Kidepo Savannah Lodge", deluxe: "Kidepo Savannah Lodge" },
-                    { city: "Explore Kidepo Valley National Park", nights: 1, superior: "Kidepo Savannah Lodge", deluxe: "Kidepo Savannah Lodge" },
-                    { city: "Hoima", nights: 1, superior: "Hoima Cultural Lodge", deluxe: "Hoima Cultural Lodge" },
-                    { city: "Bwindi Impenetrable National Park.", nights: 1, superior: "Gorilla Valley Lodge", deluxe: "Gorilla Valley Lodge" }
+                    { destination: "the hotel/lodge", nights: 1, hotel: "Airport Link Guest House", comfort: "Airport Link Guest House" },
+                    { destination: "Eastern Uganda-Kapchorwa", nights: 1, hotel: "Sipi River Lodge", comfort: "Sipi River Lodge" },
+                    { destination: "for a cultural interaction with the Karamojong", nights: 1, hotel: "Kara-Tunga or Hotel Africana Moroto", comfort: "Kara-Tunga or Hotel Africana Moroto" },
+                    { destination: "Kidepo Valley National Park", nights: 1, hotel: "Kidepo Savannah Lodge", comfort: "Kidepo Savannah Lodge" },
+                    { destination: "Explore Kidepo Valley National Park", nights: 1, hotel: "Kidepo Savannah Lodge", comfort: "Kidepo Savannah Lodge" },
+                    { destination: "Hoima", nights: 1, hotel: "Hoima Cultural Lodge", comfort: "Hoima Cultural Lodge" },
+                    { destination: "Bwindi Impenetrable National Park.", nights: 1, hotel: "Gorilla Valley Lodge", comfort: "Gorilla Valley Lodge" }
                 ]
             },
             {
@@ -715,9 +715,9 @@
                     { day: 5, title: "Transfer to Kigali Airport for your departure flight.", desc: "After breakfast, you will embark on a thrilling scenic drive to Kigali Airport for your departure flight. However, you will make an en-route visit to the Royal Palace Museum, which is located in the Huye district. This museum sheds light on Rwanda\'s post-colonial history and its subsequent emergence as a contemporary African nation. It further gives an insight into Rwanda\'s vibrant social, economic, and cultural aspects. After your visit to the Royal Palace Museum, you will resume your journey to Kigali Airport for your departure flight. Drive time from Nyungwe to Kigali is about 4-5 hours. END NOTE: This itinerary is subject to alteration and customization to accommodate your preferences. Please inform us if you want to modify the itinerary to include or exclude certain activities such that it meets your interests." }
                 ],
                 accommodations: [
-                    { city: "Kigali", nights: 1, superior: "Radisson Blu Hotel & Convention Centre, Kigali", deluxe: "Radisson Blu Hotel & Convention Centre, Kigali" },
-                    { city: "Volcanoes National Park", nights: 1, superior: "Mountain Gorilla View Lodge", deluxe: "Mountain Gorilla View Lodge" },
-                    { city: "Nyungwe National Park", nights: 1, superior: "Top View Hill Hotel", deluxe: "Top View Hill Hotel" }
+                    { destination: "Kigali", nights: 1, hotel: "Radisson Blu Hotel & Convention Centre, Kigali", comfort: "Radisson Blu Hotel & Convention Centre, Kigali" },
+                    { destination: "Volcanoes National Park", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mountain Gorilla View Lodge" },
+                    { destination: "Nyungwe National Park", nights: 1, hotel: "Top View Hill Hotel", comfort: "Top View Hill Hotel" }
                 ]
             },
             {
@@ -744,10 +744,10 @@
                     { day: 6, title: "Transfer to Kigali airport for your departure flight", desc: "Our \"6-day wildlife and gorilla trekking in Rwanda\" concludes today with a 2-hour road trip to Kigali International Airport for your departure flight. As you travel, you will be captivated by the magnificent views of the undulating terrain that defines Rwanda as the \"country of a thousand hills.\" ENDs" }
                 ],
                 accommodations: [
-                    { city: "Akagera National Park", nights: 1, superior: "Akagera Safari Camp", deluxe: "Akagera Safari Camp" },
-                    { city: "Morning game drive", nights: 1, superior: "Akagera Safari Camp", deluxe: "Akagera Safari Camp" },
-                    { city: "Kigali city for a city tour", nights: 1, superior: "Flame Tree Village", deluxe: "Flame Tree Village" },
-                    { city: "Volcanoes National Park & Ibyacu cultural experience", nights: 1, superior: "Mountain Gorilla View Lodge", deluxe: "Mountain Gorilla View Lodge" }
+                    { destination: "Akagera National Park", nights: 1, hotel: "Akagera Safari Camp", comfort: "Akagera Safari Camp" },
+                    { destination: "Morning game drive", nights: 1, hotel: "Akagera Safari Camp", comfort: "Akagera Safari Camp" },
+                    { destination: "Kigali city for a city tour", nights: 1, hotel: "Flame Tree Village", comfort: "Flame Tree Village" },
+                    { destination: "Volcanoes National Park & Ibyacu cultural experience", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mountain Gorilla View Lodge" }
                 ]
             },
             {
@@ -777,13 +777,13 @@
                     { day: 9, title: "Transfer to Kigali Airport for your departure flight", desc: "Our \"09 days of wild encounters, adventure in Rwanda, and gorilla trekking\" safari concludes today with a 2-hour road trip to Kigali International Airport for your departure flight. As you travel, you will be captivated by the magnificent views of the undulating terrain that defines Rwanda as the \"country of a thousand hills.\"" }
                 ],
                 accommodations: [
-                    { city: "the hotel", nights: 1, superior: "Five to Five Hotel-Kigali Meal plan: Dinner", deluxe: "Five to Five Hotel-Kigali Meal plan: Dinner" },
-                    { city: "Akagera National Park", nights: 1, superior: "Akagera Safari Camp", deluxe: "Akagera Safari Camp" },
-                    { city: "Kigali city.", nights: 1, superior: "Flame Tree Village", deluxe: "Flame Tree Village" },
-                    { city: "Nyungwe Forest National Park", nights: 1, superior: "Nyungwe Top View Hotel", deluxe: "Nyungwe Top View Hotel" },
-                    { city: "Nyungwe Forest", nights: 1, superior: "Nyungwe Top View Hotel", deluxe: "Nyungwe Top View Hotel" },
-                    { city: "Musanze", nights: 1, superior: "Mountain Gorilla View Lodge", deluxe: "Mountain Gorilla View Lodge" },
-                    { city: "Volcanoes National Park.", nights: 1, superior: "Mountain Gorilla View Lodge", deluxe: "Mountain Gorilla View Lodge" }
+                    { destination: "the hotel", nights: 1, hotel: "Five to Five Hotel-Kigali Meal plan: Dinner", comfort: "Five to Five Hotel-Kigali Meal plan: Dinner" },
+                    { destination: "Akagera National Park", nights: 1, hotel: "Akagera Safari Camp", comfort: "Akagera Safari Camp" },
+                    { destination: "Kigali city.", nights: 1, hotel: "Flame Tree Village", comfort: "Flame Tree Village" },
+                    { destination: "Nyungwe Forest National Park", nights: 1, hotel: "Nyungwe Top View Hotel", comfort: "Nyungwe Top View Hotel" },
+                    { destination: "Nyungwe Forest", nights: 1, hotel: "Nyungwe Top View Hotel", comfort: "Nyungwe Top View Hotel" },
+                    { destination: "Musanze", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mountain Gorilla View Lodge" },
+                    { destination: "Volcanoes National Park.", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mountain Gorilla View Lodge" }
                 ]
             }
         ];
@@ -826,22 +826,22 @@
             // Hero image
             document.getElementById('mainImage').innerHTML = `<img src="${s.image}" alt="${s.title}">`;
 
-            // Package details
-            document.getElementById('packageDetails').innerHTML = `
-                <div class="detail-item"><label>Country</label><p>${s.countryLabel}</p></div>
-                <div class="detail-item"><label>Duration</label><p>${s.duration}</p></div>
-                <div class="detail-item"><label>Tour Type</label><p>${s.tourType}</p></div>
-                <div class="detail-item"><label>Group Size</label><p>${s.groupSize}</p></div>
-                <div class="detail-item"><label>Price</label><p>${s.price}</p></div>`;
+            // // Package details
+            // document.getElementById('packageDetails').innerHTML = `
+            //     <div class="detail-item"><label>Country</label><p>${s.countryLabel}</p></div>
+            //     <div class="detail-item"><label>Duration</label><p>${s.duration}</p></div>
+            //     <div class="detail-item"><label>Tour Type</label><p>${s.tourType}</p></div>
+            //     <div class="detail-item"><label>Group Size</label><p>${s.groupSize}</p></div>
+            //     <div class="detail-item"><label>Price</label><p>${s.price}</p></div>`;
 
             // Overview
-            document.getElementById('overviewText').textContent = s.overview;
+            document.getElementById('overviewText').innerHTML = s.overview;
 
             // Prices & Inclusions tab
             if (s.pricePerPerson && s.pricePerPerson.length > 0) {
                 document.getElementById('pricePerPersonTable').style.display = 'table';
                 document.getElementById('priceDisplay').style.display = 'none';
-                document.getElementById('pricePerPersonHead').innerHTML = '<tr>' + s.pricePerPerson.map(p => `<th>${p.pax} pax</th>`).join('') + '</tr>';
+                document.getElementById('pricePerPersonHead').innerHTML = '<tr>' + s.pricePerPerson.map(p => `<th>${p.pax} PAX</th>`).join('') + '</tr>';
                 document.getElementById('pricePerPersonBody').innerHTML = '<tr>' + s.pricePerPerson.map(p => `<td class="fw-bold">${p.price}</td>`).join('') + '</tr>';
             } else {
                 document.getElementById('pricePerPersonTable').style.display = 'none';
@@ -860,7 +860,7 @@
 
             // Accommodations
             document.getElementById('accommodationsTable').innerHTML = s.accommodations.map(a => `
-                <tr><td class="fw-bold">${a.city}</td><td>${a.nights}</td><td>${a.superior}</td><td>${a.deluxe}</td></tr>`).join('');
+                <tr><td class="fw-bold">${a.destination}</td><td>${a.nights}</td><td>${a.hotel}</td><td>${a.comfort}</td></tr>`).join('');
 
             // Route map
             const routeData = {
