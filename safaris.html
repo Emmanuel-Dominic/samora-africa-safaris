@@ -291,6 +291,10 @@
                     </div>
 
                     <div class="card border-0 shadow-sm">
+                        <div id="googleMapContainer" style="margin-top: 15px;"></div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm">
                         <div class="card-body p-4">
                             <h6 class="fw-bold mb-3">Similar Listings</h6>
                             <div id="similarListings"></div>
@@ -885,6 +889,9 @@
                     <div class="route-label">${stop}</div>
                 </div>`).join('');
 
+            // Google Maps route
+            renderRouteMap(s.id);
+
             // Similar listings
             document.getElementById('similarListings').innerHTML = safaris
                 .filter((_, i2) => i2 !== index)
@@ -942,6 +949,68 @@
                 showSafariDetail(parseInt(id));
             }
         });
+    </script>
+    <script>
+        // Safari Route Map with Google Maps Embed
+        const locationNames = {
+            "Entebbe": "Entebbe,Uganda",
+            "Kampala": "Kampala,Uganda",
+            "Lake Mburo NP": "Lake+Mburo+National+Park,Uganda",
+            "Bwindi NP": "Bwindi+Impenetrable+National+Park,Uganda",
+            "Queen Elizabeth NP": "Queen+Elizabeth+National+Park,Uganda",
+            "Kibale NP": "Kibale+National+Park,Uganda",
+            "Murchison Falls NP": "Murchison+Falls+National+Park,Uganda",
+            "Kidepo Valley NP": "Kidepo+Valley+National+Park,Uganda",
+            "Ziwa Rhino Sanctuary": "Ziwa+Rhino+Sanctuary,Uganda",
+            "Jinja (Nile Rafting)": "Jinja,Uganda",
+            "Kalagala Island (Nile)": "Kalagala+Falls,Uganda",
+            "Kisoro": "Kisoro,Uganda",
+            "Mgahinga NP": "Mgahinga+Gorilla+National+Park,Uganda",
+            "Gulu": "Gulu,Uganda",
+            "Kasese": "Kasese,Uganda",
+            "Rwenzori Mountains": "Rwenzori+Mountains+National+Park,Uganda",
+            "Kapchorwa (Sipi Falls)": "Sipi+Falls,Uganda",
+            "Moroto": "Moroto,Uganda",
+            "Hoima": "Hoima,Uganda",
+            "Kigali": "Kigali,Rwanda",
+            "Volcanoes NP": "Volcanoes+National+Park,Rwanda",
+            "Gisenyi (Lake Kivu)": "Gisenyi,Rwanda",
+            "Lake Kivu": "Lake+Kivu,Rwanda",
+            "Nyungwe NP": "Nyungwe+National+Park,Rwanda",
+            "Akagera NP": "Akagera+National+Park,Rwanda",
+            "Musanze": "Musanze,Rwanda"
+        };
+
+        function renderRouteMap(safariId) {
+            const routeData = {
+                0: ["Entebbe", "Lake Mburo NP", "Bwindi NP", "Entebbe"],
+                1: ["Entebbe", "Jinja (Nile Rafting)", "Queen Elizabeth NP", "Bwindi NP", "Entebbe"],
+                2: ["Entebbe", "Kibale NP", "Queen Elizabeth NP", "Bwindi NP", "Lake Mburo NP", "Entebbe"],
+                3: ["Entebbe", "Lake Mburo NP", "Kalagala Island (Nile)", "Entebbe"],
+                4: ["Entebbe", "Ziwa Rhino Sanctuary", "Murchison Falls NP", "Queen Elizabeth NP", "Bwindi NP", "Lake Mburo NP", "Kampala", "Jinja (Nile Rafting)", "Entebbe"],
+                5: ["Entebbe", "Lake Mburo NP", "Kisoro", "Mgahinga NP", "Bwindi NP", "Queen Elizabeth NP", "Kibale NP", "Murchison Falls NP", "Ziwa Rhino Sanctuary", "Entebbe"],
+                6: ["Entebbe", "Ziwa Rhino Sanctuary", "Gulu", "Kidepo Valley NP", "Murchison Falls NP", "Queen Elizabeth NP", "Bwindi NP", "Lake Mburo NP", "Kampala", "Entebbe"],
+                7: ["Entebbe", "Ziwa Rhino Sanctuary", "Murchison Falls NP", "Kibale NP", "Queen Elizabeth NP", "Bwindi NP", "Lake Mburo NP", "Kampala", "Entebbe"],
+                8: ["Entebbe", "Kasese", "Rwenzori Mountains", "Queen Elizabeth NP", "Bwindi NP", "Entebbe"],
+                9: ["Entebbe", "Kapchorwa (Sipi Falls)", "Moroto", "Kidepo Valley NP", "Murchison Falls NP", "Ziwa Rhino Sanctuary", "Hoima", "Kibale NP", "Queen Elizabeth NP", "Bwindi NP", "Lake Mburo NP", "Entebbe"],
+                10: ["Kigali", "Volcanoes NP", "Gisenyi (Lake Kivu)", "Nyungwe NP", "Kigali"],
+                11: ["Kigali", "Akagera NP", "Kigali", "Volcanoes NP", "Kigali"],
+                12: ["Kigali", "Akagera NP", "Kigali", "Nyungwe NP", "Lake Kivu", "Musanze", "Volcanoes NP", "Kigali"]
+            };
+
+            const route = routeData[safariId] || [];
+            const container = document.getElementById('googleMapContainer');
+            if (route.length < 2) { container.innerHTML = ''; return; }
+
+            const origin = locationNames[route[0]] || route[0];
+            const destination = locationNames[route[route.length - 1]] || route[route.length - 1];
+            const waypoints = route.slice(1, -1).map(s => locationNames[s] || s).join('/');
+
+            const dirUrl = 'https://www.google.com/maps/dir/' + (locationNames[route[0]] || route[0]) + '/' + route.slice(1).map(s => locationNames[s] || s).join('/');
+
+            container.innerHTML = '<iframe width="100%" height="350" style="border:0; border-radius:8px; border:2px solid #f0e0c0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?saddr=' + origin + '&daddr=' + route.slice(1).map(s => locationNames[s] || s).join('+to:') + '&dirflg=d&output=embed"></iframe>' +
+                '<a href="' + dirUrl + '" target="_blank" class="d-block text-center mt-2 small fw-bold text-decoration-none" style="color: #B8860B;"><i class="fas fa-external-link-alt me-1"></i>View full route on Google Maps</a>';
+        }
     </script>
 </body>
 </html>
