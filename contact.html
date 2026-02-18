@@ -153,61 +153,188 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-8">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
                 <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h4 class="fw-bold mb-4">Send us a Message</h4>
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label fw-bold">Full Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label fw-bold">Email Address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="phone" class="form-label fw-bold">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone">
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label fw-bold">Subject</label>
-                                <input type="text" class="form-control" id="subject" placeholder="What is this about?" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label fw-bold">Message</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder="Your message..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-lg w-100">Send Message</button>
-                        </form>
+                    <div class="card-header text-white py-3" style="background: #B8860B;">
+                        <h4 class="fw-bold mb-1"><i class="fas fa-paper-plane me-2"></i>Make an Inquire</h4>
+                        <p class="mb-0 small" style="color: rgba(255,255,255,0.85);">Fill in the details below and our team will get back to you with a personalized itinerary.</p>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card border-0 shadow-sm bg-light">
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-3">Business Hours</h5>
-                        <p class="mb-2">
-                            <strong>Monday - Friday:</strong><br>
-                            <span class="text-muted">9:00 AM - 6:00 PM (EAT)</span>
-                        </p>
-                        <p class="mb-2">
-                            <strong>Saturday:</strong><br>
-                            <span class="text-muted">10:00 AM - 4:00 PM (EAT)</span>
-                        </p>
-                        <p class="mb-4">
-                            <strong>Sunday:</strong><br>
-                            <span class="text-muted">Closed</span>
-                        </p>
+                    <div class="card-body p-4 p-md-5">
+                        <form>
+                            <!-- Name -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" style="color: #5a3e00;">Name <span class="text-danger">*</span></label>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <input type="text" class="form-control" id="firstName" placeholder="First" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Last" required>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <h5 class="fw-bold mb-3">Follow Us</h5>
-                        <div class="d-flex gap-2">
-                            <a href="#" class="btn btn-outline-success btn-sm"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="btn btn-outline-success btn-sm"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-success btn-sm"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-success btn-sm"><i class="fab fa-youtube"></i></a>
-                        </div>
+                            <!-- Email -->
+                            <div class="mb-4">
+                                <label for="email" class="form-label fw-bold" style="color: #5a3e00;">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="your@email.com" required>
+                            </div>
+
+                            <!-- WhatsApp Number -->
+                            <div class="mb-4">
+                                <label for="whatsapp" class="form-label fw-bold" style="color: #5a3e00;">WhatsApp Number</label>
+                                <br><small class="text-muted">Please share your WhatsApp number starting with country code.</small>
+                                <input type="tel" class="form-control" id="whatsapp" placeholder="+1 234 567 890">
+                            </div>
+
+                            <!-- Country of Origin -->
+                            <div class="mb-4">
+                                <label for="country" class="form-label fw-bold" style="color: #5a3e00;">Country of Origin</label>
+                                <input type="text" class="form-control" id="country" placeholder="Please tell us where you come from.">
+                            </div>
+
+                            <hr class="my-4" style="border-color: #f0e0c0;">
+
+                            <!-- Travel Destinations -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" style="color: #5a3e00;">Travel Destinations <span class="text-danger">*</span></label>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-3 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="dest-uganda" name="destinations" value="Uganda">
+                                            <label class="form-check-label" for="dest-uganda">Uganda</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="dest-rwanda" name="destinations" value="Rwanda">
+                                            <label class="form-check-label" for="dest-rwanda">Rwanda</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="text-muted">Please choose countries you would like to safari. Can be one or multiple countries.</small>
+                            </div>
+
+                            <!-- Travel Interests -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" style="color: #5a3e00;">Travel Interests</label>
+                                <div class="row">
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-gorilla-ug" name="interests" value="Gorilla Trekking Safaris Uganda">
+                                            <label class="form-check-label" for="int-gorilla-ug">Gorilla Trekking Safaris Uganda</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-gorilla-rw" name="interests" value="Gorilla Trekking Tours Rwanda">
+                                            <label class="form-check-label" for="int-gorilla-rw">Gorilla Trekking Tours Rwanda</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-wildlife" name="interests" value="Wildlife Safaris, Game Drives, Sightseeing">
+                                            <label class="form-check-label" for="int-wildlife">Wildlife Safaris, Game Drives, Sightseeing</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-birding" name="interests" value="Bird Watching Tours (Birding)">
+                                            <label class="form-check-label" for="int-birding">Bird Watching Tours (Birding)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-chimp" name="interests" value="Chimpanzee Tracking Safari">
+                                            <label class="form-check-label" for="int-chimp">Chimpanzee Tracking Safari</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-primates" name="interests" value="Primates (Gorillas, Chimps, Golden Monkeys, etc)">
+                                            <label class="form-check-label" for="int-primates">Primates (Gorillas, Chimps, Golden Monkeys, etc)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-cultural" name="interests" value="Cultural Safaris - City Tours">
+                                            <label class="form-check-label" for="int-cultural">Cultural Safaris - City Tours</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-zanzibar" name="interests" value="Zanzibar Beach Safari">
+                                            <label class="form-check-label" for="int-zanzibar">Zanzibar Beach Safari</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-wildebeest" name="interests" value="Wildebeest Migration">
+                                            <label class="form-check-label" for="int-wildebeest">Wildebeest Migration</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="int-others" name="interests" value="Others - Tailor Made Safaris">
+                                            <label class="form-check-label" for="int-others">Others - Tailor Made Safaris</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="text-muted">Please select at least one safari adventure you may wish to experience. Specify the activities you want that are not enlisted above in the message below.</small>
+                            </div>
+
+                            <hr class="my-4" style="border-color: #f0e0c0;">
+
+                            <!-- Dates of Travel & Number of Days -->
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label for="travelDate" class="form-label fw-bold" style="color: #5a3e00;">Dates of Travel <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="travelDate" required>
+                                    <small class="text-muted">Your desired date of travel.</small>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label for="numDays" class="form-label fw-bold" style="color: #5a3e00;">Number of Days <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="numDays" min="1" placeholder="e.g. 7" required>
+                                    <small class="text-muted">Number of days you plan to spend on safari.</small>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Accommodation -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" style="color: #5a3e00;">Preferred Accommodation <span class="text-danger">*</span></label>
+                                <div class="row">
+                                    <div class="col-sm-4 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="accommodation" id="acc-budget" value="Budget (Basic)" required>
+                                            <label class="form-check-label" for="acc-budget">Standard</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="accommodation" id="acc-midrange" value="Mid-range (Standard)">
+                                            <label class="form-check-label" for="acc-midrange">Mid-range</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="accommodation" id="acc-luxury" value="Luxury (Up market)">
+                                            <label class="form-check-label" for="acc-luxury">Luxury</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Special Message -->
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-bold" style="color: #5a3e00;">Special Message <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about any special requirements, preferences, or questions you have..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-lg w-100 fw-bold text-white" style="background: #B8860B; border: none; letter-spacing: 1px;">
+                                <i class="fas fa-paper-plane me-2"></i>SUBMIT
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
