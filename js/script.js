@@ -66,11 +66,16 @@ document.addEventListener('copy', function(e) {
     return false;
 });
 
-// Smooth scroll on anchor links
+// Smooth scroll on anchor links (exclude dropdown toggles and bare # links)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        // Skip dropdown toggles - let Bootstrap handle them
+        if (this.getAttribute('data-bs-toggle') === 'dropdown') return;
+        // Skip bare # links
+        const href = this.getAttribute('href');
+        if (href === '#') return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth'
@@ -140,9 +145,11 @@ if (contactForm) {
     });
 }
 
-// Mobile menu close on link click
+// Mobile menu close on navigation link click (not dropdown toggles)
 document.querySelectorAll('.navbar-collapse a').forEach(link => {
     link.addEventListener('click', function() {
+        // Don't close the menu when clicking a dropdown toggle
+        if (this.getAttribute('data-bs-toggle') === 'dropdown') return;
         const navbarToggle = document.querySelector('.navbar-toggler');
         if (navbarToggle.offsetParent !== null) { // Check if visible (mobile)
             document.querySelector('.navbar-collapse').classList.remove('show');
