@@ -94,6 +94,58 @@ body {
     transform: scale(1.02);
 }
 
+/* Mobile Navbar Fixes */
+@media (max-width: 991.98px) {
+    .navbar {
+        z-index: 1050;
+    }
+
+    .navbar .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar-collapse {
+        background: #FFFFFF;
+        padding: 10px 0;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .navbar .nav-item {
+        border-bottom: 1px solid #f0e0c0;
+    }
+
+    .navbar .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .nav-link {
+        padding: 12px 10px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .navbar .dropdown-menu {
+        position: static !important;
+        float: none;
+        box-shadow: none;
+        background-color: #fdf8ef;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .dropdown-item {
+        padding: 10px 20px;
+        border-bottom: 1px solid #f0e0c0;
+    }
+
+    .navbar .dropdown-item:last-child {
+        border-bottom: none;
+    }
+}
+
 /* Footer Logo */
 .footer-logo {
     height: 80px;

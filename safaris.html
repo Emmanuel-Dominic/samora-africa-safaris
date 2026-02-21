@@ -41,10 +41,27 @@
         .itinerary-day-body p { color: #555; line-height: 1.7; }
 
         /* Accommodation Table */
-        .accommodation-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        .accommodation-table th { background-color: #B8860B; color: white; padding: 12px 15px; text-align: left; }
-        .accommodation-table td { padding: 12px 15px; border-bottom: 1px solid #e8e0d0; }
-        .accommodation-table tr:hover td { background-color: #fdf8ef; }
+        .accommodation-table { width: 100%; border-collapse: collapse; margin-top: 15px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .accommodation-table th { background-color: #B8860B; color: white; padding: 14px 18px; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+        .accommodation-table td { padding: 14px 18px; border-bottom: 1px solid #f0e0c0; color: #444; font-size: 0.92rem; vertical-align: middle; }
+        .accommodation-table tbody tr:nth-child(even) td { background-color: #fdf8ef; }
+        .accommodation-table tbody tr:hover td { background-color: #f5ead5; }
+        .accommodation-table td:first-child { font-weight: 600; color: #B8860B; }
+        .accommodation-table td:nth-child(2) { font-weight: 600; color: #5a3e00; }
+        .accommodation-table td:nth-child(4) { font-style: italic; color: #777; }
+
+        /* Mobile accommodation - card layout */
+        @media (max-width: 576px) {
+            .accommodation-table { box-shadow: none; }
+            .accommodation-table thead { display: none; }
+            .accommodation-table tbody tr { display: block; background: #fdf8ef; margin-bottom: 12px; border-radius: 8px; border: 1px solid #f0e0c0; padding: 12px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+            .accommodation-table tbody tr:hover td { background: transparent; }
+            .accommodation-table td { display: block; padding: 4px 0; border-bottom: none; text-align: left !important; font-weight: 400; color: #444; }
+            .accommodation-table td:first-child { font-size: 0.85rem; font-weight: 600; color: #B8860B; margin-bottom: 4px; }
+            .accommodation-table td:nth-child(2) { font-size: 1rem; font-weight: 600; color: #5a3e00; margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid #f0e0c0; }
+            .accommodation-table td:nth-child(3)::before { content: "Lodge: "; font-weight: 400; color: #777; }
+            .accommodation-table td:nth-child(4)::before { content: "Comfort: "; font-weight: 400; color: #777; }
+        }
 
         /* Request Button */
         .request-btn { background-color: #B8860B; color: white; padding: 15px 0; font-weight: bold; border: none; cursor: pointer; border-radius: 6px; font-size: 1rem; letter-spacing: 1px; transition: all 0.3s; }
@@ -274,8 +291,8 @@
                         <table class="accommodation-table">
                             <thead>
                                 <tr>
-                                    <th>Destinations</th>
                                     <th>Nights</th>
+                                    <th>Destination</th>
                                     <th>Lodge/Hotel</th>
                                     <th>Comfort</th>
                                 </tr>
@@ -398,8 +415,8 @@
                     { day: 4, title: "Travel to Entebbe or Kampala", desc: "Following an early breakfast, you will embark on a 10-hour road trip to Entebbe Airport or Kampala. The journey is lengthy, but the amazing landscape along the route will captivate you and make the travel less tiring and more enjoyable." }
                 ],
                 accommodations: [
-                    { destination: "Travel to Lake Mburo National Park", nights: 1, hotel: "Eagles Nest Lodge", comfort: "Mid-Range" },
-                    { destination: "Game drive & travel to Bwindi Impenetrable National Park", nights: 1, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" }
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Eagles Nest", comfort: "Standard" },
+                    { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" }
                 ]
             },
             {
@@ -426,10 +443,10 @@
                     { day: 6, title: "Drive to Entebbe airport for your departure flight", desc: "Early morning, you will embark on a long journey of 9-10 hours to Entebbe Airport for your departure flight. The journey is lengthy, but the amazing landscape along the route will captivate you and make the travel less tiring and more enjoyable." }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
-                    { destination: "Kayunga-Jinja", nights: 1, hotel: "The Haven Lodge", comfort: "Mid-Range" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
+                    { destination: "Kayunga/Jinja", nights: 1, hotel: "The Haven Lodge", comfort: "Mid-Range" },
                     { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "Mid-Range" },
-                    { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Ride 4 A Woman", comfort: "Mid-Range" }
+                    { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "", comfort: "" }
                 ]
             },
             {
@@ -457,11 +474,10 @@
                     { day: 7, title: "Game drive and transfer to Entebbe Airport", desc: "<p>After breakfast, you will enjoy a last drive through the park to spot more animals before heading to the Entebbe airport for your departure flight. As you drive through the park, you might be able to encounter a wide variety of animals, including zebras, warthogs, buffaloes, and many species of antelopes such as impalas, topis, and elands.</p><p>You will have a stopover at the Equator monument in Kayabwe for lunch to take photos and enjoy the amazing experiments that demonstrate how the gravitational pull at the Equator varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the equator.</p>" }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
                     { destination: "Kibale National Park", nights: 1, hotel: "Kibale Guest Cottages", comfort: "Mid-Range" },
                     { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "Mid-Range" },
-                    { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" },
-                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mid-Range" }
+                    { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" }
                 ]
             },
             {
@@ -489,8 +505,8 @@
                     { day: 7, title: "Drive to Entebbe Airport for your departure flight", desc: "After six days of cherished moments and intimate connection, you will embark on a scenic three-hour drive to Entebbe Airport for your departure flight. To ensure a smooth and stress-free transfer, we recommend booking an evening flight to allow ample time for a relaxed journey and final reflections on your unforgettable experience." }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Protea Hotel", comfort: "Luxury" },
-                    { destination: "Lake Mburo National Park", nights: 2, hotel: "Kigambira Safari Lodge", comfort: "Luxury" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Protea Hotel", comfort: "Luxury" },
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Kigambira Safari Lodge", comfort: "Luxury" },
                     { destination: "Kayunga/Jinja", nights: 3, hotel: "Lemala WildWaters Lodge", comfort: "Luxury" }
                 ]
             },
@@ -526,7 +542,7 @@
                     { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" },
                     { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mid-Range" },
                     { destination: "Kampala City", nights: 1, hotel: "Hilton Garden Hotel", comfort: "Mid-Range" },
-                    { destination: "Kayunga/Jinja", nights: 1, hotel: "The Haven Lodge", comfort: "Mid-Range" }
+                    { destination: "Kayunga/Jinja", nights: 1, hotel: "The Haven", comfort: "Mid-Range" }
                 ]
             },
             {
@@ -594,10 +610,10 @@
                     { day: 11, title: "Visit the Bahima Homestead and travel to Entebbe airport for your departure flight", desc: "<p>In the morning, you will socially interact with the Bahima (pastoralists) and actively participate in herding Ankole cows (long-horned cattle). Participating in Ankole cow herding gives you a hands-on opportunity to learn about cattle management, a tradition passed down through generations. Under the guidance of experienced local herders, you will learn the various methods of herding and guiding the cows.</p><p>Following your enriching interaction with the Bahima community, you\'ll begin your journey to Entebbe Airport for your departure. En route, we\'ll make a brief stop at the Kayabwe Equator Monument, where you can capture memorable photos straddling this significant geographical line and witness fascinating demonstrations of equatorial phenomena. The experiments show how water swirls in opposite directions on either side of the equator line.</p><p>While these entertaining demonstrations aren\'t scientifically proven, they provide a delightful and educational insight into the unique properties of our planet\'s equatorial region.</p>" }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
                     { destination: "Gulu City", nights: 1, hotel: "African Roots-Gulu", comfort: "Mid-Range" },
                     { destination: "Kidepo Valley National Park", nights: 2, hotel: "Kidepo Savannah Lodge", comfort: "Mid-Range" },
-                    { destination: "Murchison Falls National Park", nights: 2, hotel: "Fort Murchison", comfort: "Mid-Range" },
+                    { destination: "Murchison Falls National Park", nights: 2, hotel: "Fort Murchison Lodge", comfort: "Mid-Range" },
                     { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "Mid-Range" },
                     { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" },
                     { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mid-Range" }
@@ -632,12 +648,13 @@
                     { day: 11, title: "Transfer to Entebbe airport for departure flight", desc: "Your extraordinary 11-day Uganda safari adventure concludes today with your transfer to Entebbe Airport for your departure flight. We are confident that during the transfer to the airport, you will be reflecting on the incredible experiences you had during your safari." }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
-                    { destination: "Murchison Falls National Park", nights: 2, hotel: "Fort Murchison", comfort: "Mid-Range" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
+                    { destination: "Murchison Falls National Park", nights: 2, hotel: "Fort Murchison Lodge", comfort: "Mid-Range" },
                     { destination: "Kibale National Park", nights: 2, hotel: "Kibale Forest Camp", comfort: "Mid-Range" },
                     { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "Mid-Range" },
                     { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" },
-                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mid-Range" }
+                    { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mid-Range" },
+                    { destination: "Kampala City", nights: 1, hotel: "Hilton Garden Hotel", comfort: "Mid-Range" }
                 ]
             },
             {
@@ -671,9 +688,9 @@
                     { day: 13, title: "Transfer to Entebbe Airport for your departure flight", desc: "<p>You will begin your road trip of 9-10 hours to Entebbe airport following an early breakfast. The journey is lengthy, but the amazing landscape along the route will captivate you and make the travel less tiring and more enjoyable. You will have a stopover at the Equator monument in Kayabwe to take photos and enjoy the breathtaking experiments that demonstrate how the gravitational pull at the Equator varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the equator line.</p><p><em>NOTE:</em></p><p>The Rwenzori Mountains provide various hiking options tailored to different fitness levels, allowing trekkers to choose according to their abilities. For those who can\'t climb Margherita, other peaks are available.</p><p>Kindly inform us so we can customize your Rwenzori Hiking to suit your preferences and fitness level.</p>" }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
                     { destination: "Kasese Town", nights: 1, hotel: "Ngabu Hotel", comfort: "Standard" },
-                    { destination: "Rwenzori National Park", nights: 7, hotel: "Cabins/Huts", comfort: "Budget" },
+                    { destination: "Rwenzori National Park", nights: 7, hotel: "Cabins/ Huts", comfort: "Budget" },
                     { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "Mid-Range" },
                     { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" }
                 ]
@@ -710,14 +727,14 @@
                     { day: 14, title: "Visit the Bahima Homestead and travel to Entebbe airport for your departure flight", desc: "<p>In the morning, you will socially interact with the Bahima (pastoralists) and actively participate in herding the Ankole cows (long-horned cattle). Participating in Ankole cow herding gives you a hands-on opportunity to learn about cattle management, a tradition passed down through generations. Under the guidance of experienced local herders, you will learn the various methods of leading and guiding the cows.</p><p>After completing your visit to the Bahima homestead, you will proceed to Entebbe Airport for your departure flight. Along the way, you will have a brief stopover at the Equator monument in Kayabwe to take photos and enjoy the extraordinary experiments that illustrate how the gravitational pull at the Equator line varies from that at other latitudes. The experiments show how water swirls in opposite directions on either side of the equator. Though not scientifically proven, these experiments will offer an entertaining and instructive experience while learning about the geographical importance of the equator line.</p>" }
                 ],
                 accommodations: [
-                    { destination: "Entebbe", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
-                    { destination: "Kapchorwa", nights: 1, hotel: "Rafiki Lodge Sipi", comfort: "Standard" },
+                    { destination: "Entebbe City", nights: 1, hotel: "Airport Link Guest House", comfort: "Standard" },
+                    { destination: "Sipi- Kapchorwa", nights: 1, hotel: "Rafiki Lodge-Sipi", comfort: "Standard" },
                     { destination: "Moroto", nights: 1, hotel: "Hotel Africana", comfort: "Mid-Range" },
                     { destination: "Kidepo Valley National Park", nights: 2, hotel: "Kidepo Savannah Lodge", comfort: "Mid-Range" },
-                    { destination: "Murchison Falls National Park", nights: 2, hotel: "Fort Murchison", comfort: "Mid-Range" },
-                    { destination: "Hoima Town", nights: 1, hotel: "Hoima Cultural Lodge", comfort: "Mid-Range" },
+                    { destination: "Murchison Falls National Park", nights: 2, hotel: "Fort Murchison Lodge", comfort: "Mid-Range" },
+                    { destination: "Hoima City", nights: 1, hotel: "Hoima Cultural Lodge", comfort: "Mid-Range" },
                     { destination: "Kibale National Park", nights: 1, hotel: "Kibale Forest Camp", comfort: "Mid-Range" },
-                    { destination: "Queen Elizabeth National Park", nights: 1, hotel: "Kibale Forest Camp", comfort: "Mid-Range" },
+                    { destination: "Queen Elizabeth National Park", nights: 1, hotel: "The Bush Lodge", comfort: "Mid-Range" },
                     { destination: "Bwindi Impenetrable National Park", nights: 2, hotel: "Gorilla Valley Lodge", comfort: "Mid-Range" },
                     { destination: "Lake Mburo National Park", nights: 1, hotel: "Mpogo Safari Lodge", comfort: "Mid-Range" }
                 ]
@@ -745,10 +762,10 @@
                     { day: 5, title: "Transfer to Kigali Airport for your departure flight", desc: "<p>After breakfast, you will embark on a thrilling scenic drive to Kigali Airport for your departure flight. However, you will make an en-route visit to the Royal Palace Museum, which is located in the Huye district. This museum sheds light on Rwanda\'s post-colonial history and its subsequent emergence as a contemporary African nation. It further gives an insight into Rwanda\'s vibrant social, economic, and cultural aspects.</p><p>After your visit to the Royal Palace Museum, you will resume your journey to Kigali Airport for your departure flight.</p><p><em>Drive time from Nyungwe to Kigali is about 4-5 hours.</em></p>" }
                 ],
                 accommodations: [
-                    { destination: "Arrive in Kigali and take a tour of the city", nights: 1, hotel: "Radisson Blu Hotel & Convention Centre, Kigali", comfort: "Luxury" },
-                    { destination: "Travel to Volcanoes National Park", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mid-Range" },
-                    { destination: "Gorilla trekking in Volcanoes National Park and travel to Gisenyi", nights: 1, hotel: "Paradise Malahide", comfort: "Mid-Range" },
-                    { destination: "Travel to Nyungwe National Park", nights: 1, hotel: "Top View Hill Hotel", comfort: "Mid-Range" }
+                    { destination: "Kigali City", nights: 1, hotel: "Radisson Blu Hotel & Convention Centre, Kigali", comfort: "Luxury" },
+                    { destination: "Volcanoes National Park", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mid-Range" },
+                    { destination: "Gisenyi", nights: 1, hotel: "Paradise Malahide", comfort: "Mid-Range" },
+                    { destination: "Nyungwe National Park", nights: 1, hotel: "Top View Hill Hotel", comfort: "Mid-Range" }
                 ]
             },
             {
@@ -775,9 +792,9 @@
                     { day: 6, title: "Transfer to Kigali airport for your departure flight", desc: "Our \'6-day wildlife and gorilla trekking in Rwanda\' concludes today with a 2-hour road trip to Kigali International Airport for your departure flight. As you travel, you will be captivated by the magnificent views of the undulating terrain that defines Rwanda as the \'country of a thousand hills.\'" }
                 ],
                 accommodations: [
-                    { destination: "Travel to Akagera National Park", nights: 2, hotel: "Akagera Safari Camp", comfort: "Mid-Range" },
-                    { destination: "Travel to Kigali city for a city tour", nights: 1, hotel: "Flame Tree Village", comfort: "Mid-Range" },
-                    { destination: "Travel to Volcanoes National Park & Ibyacu cultural experience", nights: 1, hotel: "Mountain Gorilla View Lodge", comfort: "Mid-Range" }
+                    { destination: "Akagera National Park", nights: 2, hotel: "Akagera Safari Camp", comfort: "Mid-Range" },
+                    { destination: "Kigali City", nights: 1, hotel: "Flame Tree Village", comfort: "Mid-Range" },
+                    { destination: "Volcanoes National Park", nights: 2, hotel: "Mountain Gorilla View Lodge", comfort: "Mid-Range" }
                 ]
             },
             {
@@ -807,12 +824,12 @@
                     { day: 9, title: "Transfer to Kigali Airport for your departure flight", desc: "Our \'09 days of wild encounters, adventure in Rwanda, and gorilla trekking\' safari concludes today with a 2-hour road trip to Kigali International Airport for your departure flight. As you travel, you will be captivated by the magnificent views of the undulating terrain that defines Rwanda as the \'country of a thousand hills.\'" }
                 ],
                 accommodations: [
-                    { destination: "Arrival in Kigali and transfer to the hotel", nights: 1, hotel: "Five to Five Hotel-Kigali", comfort: "Mid-Range" },
-                    { destination: "Travel to Akagera National Park", nights: 1, hotel: "Akagera Safari Camp", comfort: "Mid-Range" },
-                    { destination: "Enjoy a morning game drive before heading to Kigali city", nights: 1, hotel: "Flame Tree Village", comfort: "Mid-Range" },
-                    { destination: "Travel to Nyungwe Forest National Park", nights: 2, hotel: "Nyungwe Top View Hotel", comfort: "Mid-Range" },
-                    { destination: "Travel to Lake Kivu to relax", nights: 1, hotel: "Paradise Malahide", comfort: "Mid-Range" },
-                    { destination: "Travel to Musanze and visit the Iby’Iwacu Cultural Village", nights: 2, hotel: "Mountain Gorilla View Lodge", comfort: "Mid-Range" }
+                    { destination: "Kigali City", nights: 1, hotel: "Five to Five Hotel-Kigali", comfort: "Mid-Range" },
+                    { destination: "Akagera National Park", nights: 1, hotel: "Akagera Safari Camp", comfort: "Mid-Range" },
+                    { destination: "Kigali City", nights: 1, hotel: "Flame Tree Village", comfort: "Mid-Range" },
+                    { destination: "Nyungwe National Park", nights: 2, hotel: "Nyungwe Top View Hotel", comfort: "Mid-Range" },
+                    { destination: "Lake Kivu", nights: 1, hotel: "Paradise Malahide", comfort: "Mid-Range" },
+                    { destination: "Musanze/Volcanoes National Park", nights: 2, hotel: "Mountain Gorilla View Lodge", comfort: "Mid-Range" }
                 ]
             }
         ];
@@ -920,8 +937,26 @@
                 </div>`).join('');
 
             // Accommodations
-            document.getElementById('accommodationsTable').innerHTML = s.accommodations.map(a => `
-                <tr><td class="fw-bold">${a.destination}</td><td>${a.nights}</td><td>${a.hotel}</td><td>${a.comfort}</td></tr>`).join('');
+            let currentNight = 1;
+            document.getElementById('accommodationsTable').innerHTML =
+                s.accommodations.map(a => {
+                    let label;
+                    const n = a.nights;
+                    if (n === 1) {
+                        label = `Night ${currentNight}`;
+                        currentNight += 1;
+                    } else if (n === 2) {
+                        label = `Nights ${currentNight} & ${currentNight + 1}`;
+                        currentNight += 2;
+                    } else if (n === 3) {
+                        label = `Nights ${currentNight}, ${currentNight + 1} & ${currentNight + 2}`;
+                        currentNight += 3;
+                    } else {
+                        label = `Nights ${currentNight} to ${currentNight + n - 1}`;
+                        currentNight += n;
+                    }
+                    return `<tr><td>${label}</td><td class="fw-bold">${a.destination}</td><td>${a.hotel}</td><td>${a.comfort}</td></tr>`;
+                }).join('');
 
             // Route map
             const routeData = {
