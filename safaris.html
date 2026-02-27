@@ -246,7 +246,7 @@
                         <!-- <div class="package-details" id="packageDetails"></div>
                         <hr> -->
                         <h5 class="fw-bold mb-3">Overview</h5>
-                        <p id="overviewText" class="text-muted" style="line-height: 1.8;"></p>
+                        <p id="overviewText" style="line-height: 1.8; color: #222;"></p>
 
                     </div>
 
@@ -299,6 +299,9 @@
                             </thead>
                             <tbody id="accommodationsTable"></tbody>
                         </table>
+                        <div class="mt-3 p-3 rounded" style="background: #fdf8ef; border: 1px solid #f0e0c0;">
+                            <p class="text-muted mb-0 small"><i class="fas fa-info-circle me-2" style="color: #B8860B;"></i>Accommodations listed are subject to availability. In case of unavailability, similar or upgraded lodges of the same standard will be arranged. Please <a href="contact.html" class="text-decoration-none fw-semibold" style="color: #B8860B;">contact us</a> for special accommodation requests.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -308,6 +311,9 @@
                         <i class="fas fa-paper-plane me-2"></i>INQUIRE
                     </a>
 
+                    <!-- Safari Highlights: desktop sidebar (hidden on mobile) -->
+                    <div id="safariHighlightsSidebar" class="d-none d-lg-block mb-4"></div>
+
                     <div class="route-map-section mb-4">
                         <h6 class="fw-bold mb-3"><i class="fas fa-route me-2" style="color: #B8860B;"></i>Safari Route</h6>
                         <div id="routeMap"></div>
@@ -316,9 +322,6 @@
                     <div class="card border-0 shadow-sm">
                         <div id="googleMapContainer" style="margin-top: 15px;"></div>
                     </div>
-
-                    <!-- Safari Highlights: desktop sidebar (hidden on mobile) -->
-                    <div id="safariHighlightsSidebar" class="d-none d-lg-block mt-4"></div>
                 </div>
             </div>
         </div>
@@ -901,6 +904,14 @@
                 highlightsHTML = overviewHTML.substring(hrBeforeHighlights, hrBeforeNotes);
                 notesHTML = overviewHTML.substring(hrBeforeNotes);
 
+                // Wrap notes in a styled box
+                if (notesHTML) {
+                    // Remove leading <hr> and extract list content
+                    let cleanNotes = notesHTML.replace(/^<hr>/, '');
+                    // Replace the h5 heading with an icon-styled one
+                    cleanNotes = cleanNotes.replace(/<h5[^>]*>Quick Safari Notes<\/h5>/, '<h6 class="fw-bold mb-3"><i class="fas fa-clipboard-list me-2" style="color: #B8860B;"></i>Quick Safari Notes</h6>');
+                    notesHTML = `<div class="mt-4 p-4 rounded" style="background: #fdf8ef; border: 1px solid #f0e0c0; line-height: 1.8; color: #222;">${cleanNotes}</div>`;
+                }
                 overviewHTML = overviewOnly + notesHTML;
             } else if (highlightsIdx > -1) {
                 const hrBefore = overviewHTML.lastIndexOf('<hr>', highlightsIdx);
