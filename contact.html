@@ -299,17 +299,22 @@
 
                             <hr class="my-4" style="border-color: #f0e0c0;">
 
-                            <!-- Dates of Travel & Number of Days -->
+                            <!-- Dates of Travel, Number of Days & Number of Travellers -->
                             <div class="row">
-                                <div class="col-md-6 mb-4">
+                                <div class="col-md-4 mb-4">
                                     <label for="travelDate" class="form-label fw-bold" style="color: #5a3e00;">Dates of Travel <span class="text-danger">*</span></label>
                                     <input type="date" class="form-control" id="travelDate" required>
                                     <small class="text-muted">Your desired date of travel.</small>
                                 </div>
-                                <div class="col-md-6 mb-4">
+                                <div class="col-md-4 mb-4">
                                     <label for="numDays" class="form-label fw-bold" style="color: #5a3e00;">Number of Days <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control" id="numDays" min="1" placeholder="e.g. 7" required>
-                                    <small class="text-muted">Number of days you plan to spend on safari.</small>
+                                    <small class="text-muted">Days you plan to spend on safari.</small>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <label for="numTravellers" class="form-label fw-bold" style="color: #5a3e00;">Number of Travellers <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="numTravellers" min="1" placeholder="e.g. 2" required>
+                                    <small class="text-muted">Total number of people travelling.</small>
                                 </div>
                             </div>
 
